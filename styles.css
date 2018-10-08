@@ -1,0 +1,292 @@
+body {
+  background-color: #222222;
+}
+#landing {
+  height: 100%;
+  color: white;
+  font-size: 40px;
+  text-align: center;
+}
+
+#timerDiv {
+  background: #222222;
+  height: 80px;
+  font-size: 45px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
+#startButton {
+  position: absolute;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+  width: 40%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, 600%);
+}
+#backButton {
+  position: fixed;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+  width: 40%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, 500%);
+}
+
+#howTo {
+
+    position: absolute;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: auto;
+    width: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 500%);
+  
+}
+
+ol {
+  color: white;
+  font-size: 14px;
+  line-height: 1em;
+  margin: 0;
+  padding: 0.2em 25%;
+}
+
+#button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+button.pregame {
+  background-color: #9a9c00;
+}
+button.movement {
+  background-color: #9a4b4b;
+}
+button.psychic {
+  background-color: #974b9a;
+}
+button.shooting {
+  background-color: #584b9a;
+}
+button.charge {
+  background-color: #4b959a;
+}
+button.fight {
+  background-color: #4e9a4b;
+}
+button.morale {
+  background-color: #9a874b;
+}
+
+.phaseRow {
+  color: white;
+  height: 57px;
+}
+
+button.accordion {
+  cursor: pointer;
+  width: 100%;
+  height: 50px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+  transition: 0.4s;
+  margin: ".5px 0";
+  border-bottom: none;
+}
+
+button.accordion.active,
+button.accordion:hover {
+  color: white;
+}
+
+button.accordion:before {
+  font-size: 9px;
+  float: left;
+  margin: ".5px 0";
+  border-bottom: none;
+}
+
+div.panel {
+  background-color: grey;
+  max-height: 0;
+  padding-left: 15px;
+  overflow: hidden;
+  padding-top: 0px;
+  border-bottom: 4px solid #ccc;
+  transition: 0.6s ease-in-out;
+  opacity: 0;
+  border-bottom: none;
+}
+
+.panel-icon {
+  margin-right: 10px;
+}
+
+.panel h5 {
+  font-size: 15px;
+  line-height: 23px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  display: inline-block;
+  color: #2d2d2d;
+}
+
+.panel p {
+  font-size: 15px;
+  line-height: 23px;
+  padding: 15px 30px 20px 0;
+  color: whitesmoke;
+}
+
+div.panel.show {
+  opacity: 1;
+  max-height: 500px;
+  margin: ".5px 0";
+}
+
+#aboutText {
+  font-size: 14px;
+}
+
+/* ----------------------------------------------------- */
+
+/* Include the padding and border in an element's total width and height */
+* {
+  box-sizing: border-box;
+}
+
+/* Remove margins and padding from the list */
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the list items */
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 25px 12px 20%;
+  background: darkgray;
+  font-size: 18px;
+  transition: 0.2s;
+  color: white;
+
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+  background: #494949;
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+  background: rgb(37, 37, 37);
+}
+
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+  background: #888;
+  color: rgb(0, 0, 0);
+  text-decoration: line-through;
+}
+
+/* Add a "checked" mark when clicked on */
+ul li.checked::before {
+  content: "";
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+/* Style the close button */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: grey;
+  color: white;
+}
+
+/* Style the header */
+.header {
+  background-color: grey;
+  padding: 0 20% 0 20%;
+  color: white;
+  text-align: center;
+}
+
+/* Clear floats after the header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the input */
+input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+
+/* Style the "Add" button */
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background: #979797;
+  color: rgb(34, 34, 34);
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+
+.addBtn:hover {
+  background-color: #bbb;
+}
+

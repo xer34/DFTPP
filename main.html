@@ -39,18 +39,13 @@
             </div>
             <button class="accordion movement">Movement</button>
             <div class="panel movement">
-                <p>A model can be moved in any direction,
-                    to a distance, in inches, equal to or
-                    less than the Move characteristic on its
-                    datasheet. No part of the model’s base
-                    (or hull) can move further than this. It
-                    cannot be moved through other models
-                    or through terrain features such as walls,
-                    but can be moved vertically in order to
-                    climb or traverse any scenery.
-                    If the datasheet for a model says it can
-                    Fly, it can move across models and
-                    terrain as if they were not there.</p>
+                <div id="myDIV" class="header">
+
+                    <input type="text" id="movementInput" placeholder="Add Item">
+                    <span onclick="moveElement()" class="addBtn">Add</span>
+                </div>
+
+                <ul id="moveUL">
             </div>
 
             <button class="accordion psychic">Psychic</button>
@@ -67,47 +62,43 @@
 
             <button class="accordion shooting">Shooting</button>
             <div class="panel shooting">
-                <ol>1. Choose unit to shoot with</ol>
-                <ol> 2. Choose targets and choose ranged weapon</ol>
-                <ol> 3. Resolve attacks</ol>
-                <ol> • Make hit roll</ol>
-                <ol> • Make wound roll</ol>
-                <ol> • Enemy allocates wound</ol>
-                <ol> • Enemy makes saving throw</ol>
-                <ol> • Inflict damage</ol>
+                <div id="myDIV" class="header">
+                    <input type="text" id="shootInput" placeholder="Add Item">
+                    <span onclick="shootElement()" class="addBtn">Add</span>
+
+                </div>
+                <ul id="shootUL">
             </div>
+
+
             <button class="accordion charge">Charge</button>
             <div class="panel charge">
-                <ol>1.Choose unit to charge with</ol>
-                <ol> 2.Choose targets</ol>
-                <ol> 3.Enemy resolves Overwatch</ol>
-                <ol> 4.Roll 2D6 and make charge move</ol>
+                <div id="myDIV" class="header">
+                    <input type="text" id="chargeInput" placeholder="Add Item">
+                    <span onclick="chargeElement()" class="addBtn">Add</span>
+
+                </div>
+                <ul id="chargeUL">
             </div>
 
             <button class="accordion fight">Fight</button>
             <div class="panel fight">
-                <ol> 1. Choose unit to fight with</ol>
-                <ol>2. Pile in up to 3"</ol>
-                <ol> 3. Choose targets</ol>
-                <ol>4. Choose melee weapon</ol>
-                <ol> 5. Resolve close combat attacks</ol>
-                <ol> • Make hit roll</ol>
-                <ol> • Make wound roll</ol>
-                <ol> • Enemy allocates wound</ol>
-                <ol> • Enemy makes saving throw</ol>
-                <ol> • Inflict damage</ol>
-                <ol> 6.Consolidate up to 3"</ol>
+                <div id="myDIV" class="header">
+                    <input type="text" id="fightInput" placeholder="Add Item">
+                    <span onclick="fightElement()" class="addBtn">Add</span>
+
+                </div>
+                <ul id="fightUL">
             </div>
 
             <button class="accordion morale">Morale</button>
             <div class="panel morale">
-                <p>To take a Morale test, roll a dice and add the number
-                    of models from the unit that have been slain this turn.
-                    If the result of the Morale test exceeds the highest
-                    Leadership characteristic in the unit, the test is failed.
-                    For each point that the test is failed by, one model
-                    in that unit must flee and is removed from play. You
-                    choose which models flee from the units you command.</p>
+                <div id="myDIV" class="header">
+                    <input type="text" id="moraleInput" placeholder="Add Item">
+                    <span onclick="moraleElement()" class="addBtn">Add</span>
+
+                </div>
+                <ul id="moraleUL">
             </div>
         </div>
     </div>

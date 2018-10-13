@@ -57,6 +57,46 @@ $("#pause").click(function() {
   clearInterval(chessClock);
 });
 
+// OPPONENT TIMER ----------------------------------------------------------------------
+var OchessClock;
+var OtimerOn = false;
+var Otime = 5400;
+
+$("#OtimerDiv").click(function() {
+  clearInterval(OchessClock);
+  OtimerOn = true;
+  OchessClock = setInterval(function() {
+    time--;
+    console.log(time);
+    if (time >= 0) {
+      var minutes = ~~(time / 60);
+      var seconds = time - minutes * 60;
+      span = document.getElementById("OtimerCount");
+      span.innerHTML = minutes + ":" + seconds;
+    }
+    if (Otime === 0) {
+      alert("You are out of time.");
+      clearInterval(Otime);
+    }
+    if ((timerOn = true)) {
+      clearInterval(Otime);
+    }
+  }, 1000);
+});
+
+$("#Oreset").click(function() {
+  clearInterval(OchessClock);
+  Otime = 5400;
+  span = document.getElementById("OtimerCount");
+  span.innerHTML = "90:00";
+  console.log("Opponet Reset");
+});
+
+$("#Opause").click(function() {
+  console.log("Opponent Stopping");
+  clearInterval(OchessClock);
+});
+
 // preGameInput----------------------------------------------------------------------
 
 // Create a "close" button and append it to each list item
@@ -81,7 +121,7 @@ for (i = 0; i < close.length; i++) {
 }
 
 // Add a "checked" symbol when clicking on a list item
-var list = document.querySelector("ul");
+var list = document.querySelector("#myUL");
 list.addEventListener(
   "click",
   function(ev) {
@@ -118,7 +158,18 @@ function newElement() {
     };
   }
 }
-// movement----------------------------------------------------------------------
+// movement---------------------------------------------------------------------
+
+var list = document.querySelector("#moveUL");
+list.addEventListener(
+  "click",
+  function(ev) {
+    if (ev.target.tagName === "LI") {
+      ev.target.classList.toggle("checked");
+    }
+  },
+  false
+);
 
 // Create a new list item when clicking on the "Add" button
 function moveElement() {
@@ -146,7 +197,18 @@ function moveElement() {
     };
   }
 }
-// psychicInput ----------------------------------------------------------------------
+// psychicInput ----------------------------------------------------------------
+
+var list = document.querySelector("#psyUL");
+list.addEventListener(
+  "click",
+  function(ev) {
+    if (ev.target.tagName === "LI") {
+      ev.target.classList.toggle("checked");
+    }
+  },
+  false
+);
 
 function newPsychicElement() {
   var li = document.createElement("li");
@@ -173,7 +235,18 @@ function newPsychicElement() {
     };
   }
 }
-// shooting ----------------------------------------------------------------------
+// shooting --------------------------------------------------------------------
+
+var list = document.querySelector("#shootUL");
+list.addEventListener(
+  "click",
+  function(ev) {
+    if (ev.target.tagName === "LI") {
+      ev.target.classList.toggle("checked");
+    }
+  },
+  false
+);
 
 function shootElement() {
   var li = document.createElement("li");
@@ -203,6 +276,17 @@ function shootElement() {
 
 // charge ----------------------------------------------------------------------
 
+var list = document.querySelector("#chargeUL");
+list.addEventListener(
+  "click",
+  function(ev) {
+    if (ev.target.tagName === "LI") {
+      ev.target.classList.toggle("checked");
+    }
+  },
+  false
+);
+
 function chargeElement() {
   var li = document.createElement("li");
   var inputValue = document.getElementById("chargeInput").value;
@@ -230,6 +314,17 @@ function chargeElement() {
 }
 // fight ----------------------------------------------------------------------
 
+var list = document.querySelector("#fightUL");
+list.addEventListener(
+  "click",
+  function(ev) {
+    if (ev.target.tagName === "LI") {
+      ev.target.classList.toggle("checked");
+    }
+  },
+  false
+);
+
 function fightElement() {
   var li = document.createElement("li");
   var inputValue = document.getElementById("fightInput").value;
@@ -256,6 +351,17 @@ function fightElement() {
   }
 }
 // morale ----------------------------------------------------------------------
+
+var list = document.querySelector("#moraleUL");
+list.addEventListener(
+  "click",
+  function(ev) {
+    if (ev.target.tagName === "LI") {
+      ev.target.classList.toggle("checked");
+    }
+  },
+  false
+);
 
 function moraleElement() {
   var li = document.createElement("li");
@@ -320,3 +426,323 @@ $(".cpCounter").click(function() {
     .focus()
     .select();
 });
+
+//  end turn button ---------------------------------
+
+$("#endturn").click(function() {
+  $("#yourturn").hide();
+  clearInterval(chessClock);
+  console.log("stopping");
+});
+
+//  OPPONENT counters ---------------------------------
+
+$(".OvpCounter").click(function(e) {
+  var button_classes;
+  var value = +$(".OvpCounter").val();
+  button_classes = $(e.currentTarget).prop("class");
+  if (button_classes.indexOf("up_count") !== -1) {
+    value = value + 1;
+  } else {
+    value = value - 1;
+  }
+  value = value < 0 ? 0 : value;
+  $(".OvpCounter").val(value);
+});
+$(".OvpCounter").click(function() {
+  $(this)
+    .focus()
+    .select();
+});
+
+$(".OcpCounter").click(function(e) {
+  var button_classes;
+  var value = +$(".OcpCounter").val();
+  button_classes = $(e.currentTarget).prop("class");
+  if (button_classes.indexOf("up_count") !== -1) {
+    value = value + 1;
+  } else {
+    value = value - 1;
+  }
+  value = value < 0 ? 0 : value;
+  $(".OcpCounter").val(value);
+});
+$(".OcpCounter").click(function() {
+  $(this)
+    .focus()
+    .select();
+});
+
+// ------------------------------------------------------------------
+
+// opponent accordians -----------------------------------------------
+// opponent preGame---------------------------------------------------------------------
+
+var list = document.querySelector("#OmyUL");
+list.addEventListener(
+  "click",
+  function(ev) {
+    if (ev.target.tagName === "LI") {
+      ev.target.classList.toggle("checked");
+    }
+  },
+  false
+);
+
+// Create a new list item when clicking on the "Add" button
+function OnewElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("OpreGameInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === "") {
+    alert("You must write something!");
+  } else {
+    document.getElementById("OmyUL").appendChild(li);
+  }
+  document.getElementById("OpreGameInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    };
+  }
+}
+
+// opponent movement---------------------------------------------------------------------
+
+var list = document.querySelector("#OmoveUL");
+list.addEventListener(
+  "click",
+  function(ev) {
+    if (ev.target.tagName === "LI") {
+      ev.target.classList.toggle("checked");
+    }
+  },
+  false
+);
+
+// Create a new list item when clicking on the "Add" button
+function OmoveElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("OmovementInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === "") {
+    alert("You must write something!");
+  } else {
+    document.getElementById("OmoveUL").appendChild(li);
+  }
+  document.getElementById("OmovementInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    };
+  }
+}
+// opponent psychicInput ----------------------------------------------------------------
+
+var list = document.querySelector("#OpsyUL");
+list.addEventListener(
+  "click",
+  function(ev) {
+    if (ev.target.tagName === "LI") {
+      ev.target.classList.toggle("checked");
+    }
+  },
+  false
+);
+
+function OnewPsychicElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("OpsychicInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === "") {
+    alert("You must write something!");
+  } else {
+    document.getElementById("OpsyUL").appendChild(li);
+  }
+  document.getElementById("OpsychicInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    };
+  }
+}
+// opponent shooting --------------------------------------------------------------------
+
+var list = document.querySelector("#OshootUL");
+list.addEventListener(
+  "click",
+  function(ev) {
+    if (ev.target.tagName === "LI") {
+      ev.target.classList.toggle("checked");
+    }
+  },
+  false
+);
+
+function OshootElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("OshootInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === "") {
+    alert("You must write something!");
+  } else {
+    document.getElementById("OshootUL").appendChild(li);
+  }
+  document.getElementById("OshootInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    };
+  }
+}
+
+// opponent charge ----------------------------------------------------------------------
+
+var list = document.querySelector("#OchargeUL");
+list.addEventListener(
+  "click",
+  function(ev) {
+    if (ev.target.tagName === "LI") {
+      ev.target.classList.toggle("checked");
+    }
+  },
+  false
+);
+
+function OchargeElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("OchargeInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === "") {
+    alert("You must write something!");
+  } else {
+    document.getElementById("OchargeUL").appendChild(li);
+  }
+  document.getElementById("OchargeInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    };
+  }
+}
+// opponent fight ----------------------------------------------------------------------
+
+var list = document.querySelector("#OfightUL");
+list.addEventListener(
+  "click",
+  function(ev) {
+    if (ev.target.tagName === "LI") {
+      ev.target.classList.toggle("checked");
+    }
+  },
+  false
+);
+
+function OfightElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("OfightInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === "") {
+    alert("You must write something!");
+  } else {
+    document.getElementById("OfightUL").appendChild(li);
+  }
+  document.getElementById("OfightInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    };
+  }
+}
+// opponent morale ----------------------------------------------------------------------
+
+var list = document.querySelector("#OmoraleUL");
+list.addEventListener(
+  "click",
+  function(ev) {
+    if (ev.target.tagName === "LI") {
+      ev.target.classList.toggle("checked");
+    }
+  },
+  false
+);
+
+function OmoraleElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("OmoraleInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === "") {
+    alert("You must write something!");
+  } else {
+    document.getElementById("OmoraleUL").appendChild(li);
+  }
+  document.getElementById("OmoraleInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    };
+  }
+}

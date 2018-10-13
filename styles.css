@@ -1,5 +1,5 @@
-body {
-  background-color: black;
+html {
+  background: #222222;
 }
 
 #landing {
@@ -13,6 +13,7 @@ body {
   background: #222222;
 }
 
+
 #resetDiv {
   background: #222222;
 }
@@ -23,6 +24,15 @@ body {
 }
 
 #timerDiv {
+  background: #222222;
+  height: 80px;
+  font-size: 45px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
+
+#OtimerDiv {
   background: #222222;
   height: 80px;
   font-size: 45px;
@@ -46,6 +56,8 @@ body {
   margin-right: -50%;
   transform: translate(-50%, 600%);
 }
+
+
 
 #backButton {
   position: fixed;

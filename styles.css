@@ -1,11 +1,25 @@
 body {
-  background-color: #222222;
+  background-color: black;
 }
+
 #landing {
   height: 100%;
   color: white;
   font-size: 40px;
   text-align: center;
+}
+
+#pauseDiv {
+  background: #222222;
+}
+
+#resetDiv {
+  background: #222222;
+}
+
+#counterDiv {
+  background: #222222;
+  color: white;
 }
 
 #timerDiv {
@@ -16,6 +30,7 @@ body {
   color: white;
   cursor: pointer;
 }
+
 #startButton {
   position: absolute;
   border: none;
@@ -31,6 +46,7 @@ body {
   margin-right: -50%;
   transform: translate(-50%, 600%);
 }
+
 #backButton {
   position: fixed;
   border: none;
@@ -48,21 +64,19 @@ body {
 }
 
 #howTo {
-
-    position: absolute;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: auto;
-    width: 40%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, 500%);
-  
+  position: absolute;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+  width: 40%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, 500%);
 }
 
 ol {
@@ -81,21 +95,27 @@ ol {
 button.pregame {
   background-color: #9a9c00;
 }
+
 button.movement {
   background-color: #9a4b4b;
 }
+
 button.psychic {
   background-color: #974b9a;
 }
+
 button.shooting {
   background-color: #584b9a;
 }
+
 button.charge {
   background-color: #4b959a;
 }
+
 button.fight {
   background-color: #4e9a4b;
 }
+
 button.morale {
   background-color: #9a874b;
 }
@@ -175,17 +195,20 @@ div.panel.show {
 /* ----------------------------------------------------- */
 
 /* Include the padding and border in an element's total width and height */
+
 * {
   box-sizing: border-box;
 }
 
 /* Remove margins and padding from the list */
+
 ul {
   margin: 0;
   padding: 0;
 }
 
 /* Style the list items */
+
 ul li {
   cursor: pointer;
   position: relative;
@@ -194,7 +217,6 @@ ul li {
   font-size: 18px;
   transition: 0.2s;
   color: white;
-
   /* make the list items unselectable */
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -203,16 +225,19 @@ ul li {
 }
 
 /* Set all odd list items to a different color (zebra-stripes) */
+
 ul li:nth-child(odd) {
   background: #494949;
 }
 
 /* Darker background-color on hover */
+
 ul li:hover {
   background: rgb(37, 37, 37);
 }
 
 /* When clicked on, add a background color and strike out text */
+
 ul li.checked {
   background: #888;
   color: rgb(0, 0, 0);
@@ -220,6 +245,7 @@ ul li.checked {
 }
 
 /* Add a "checked" mark when clicked on */
+
 ul li.checked::before {
   content: "";
   position: absolute;
@@ -234,6 +260,7 @@ ul li.checked::before {
 }
 
 /* Style the close button */
+
 .close {
   position: absolute;
   right: 0;
@@ -247,6 +274,7 @@ ul li.checked::before {
 }
 
 /* Style the header */
+
 .header {
   background-color: grey;
   padding: 0 20% 0 20%;
@@ -255,6 +283,7 @@ ul li.checked::before {
 }
 
 /* Clear floats after the header */
+
 .header:after {
   content: "";
   display: table;
@@ -262,6 +291,7 @@ ul li.checked::before {
 }
 
 /* Style the input */
+
 input {
   margin: 0;
   border: none;
@@ -273,6 +303,7 @@ input {
 }
 
 /* Style the "Add" button */
+
 .addBtn {
   padding: 10px;
   width: 25%;
@@ -290,3 +321,25 @@ input {
   background-color: #bbb;
 }
 
+/* plus and minus button styling  ------------------------  */
+
+.main {
+  margin-left: 5px;
+}
+.counter {
+  width: 45px;
+  border-radius: 0px !important;
+  text-align: center;
+}
+.up_count {
+  margin-bottom: 10px;
+  margin-left: -4px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.down_count {
+  margin-bottom: 10px;
+  margin-right: -4px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}

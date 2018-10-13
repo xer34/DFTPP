@@ -82,8 +82,8 @@
         </ul>
       </div>
 
-      <button class="accordion shooting">Shooting</button>
-      <div class="panel shooting">
+      <button class="accordion shooting" >Shooting</button>
+      <div class="panel shooting" >
         <div id="myDIV" class="header">
           <input type="text" id="shootInput" placeholder="Add Item">
           <span onclick="shootElement()" class="addBtn">Add</span>
@@ -122,8 +122,124 @@
         <ul id="moraleUL">
       </div>
     </div>
+          <button id='endturn' type="button" class="btn btn-secondary" style="position:fixed;left: 50%; margin-right: -50%;transform: translate(-50%, 20%);">END TURN</button>
   </div>
-  <button id='endturn' onclick="endTurn()" type="button" class="btn btn-secondary" style="position:fixed;left: 50%; margin-right: -50%;transform: translate(-50%, 20%);">END TURN</button>
+        
+<!-- Opponent Turn Section ----------------------------------------------- -->
+        
+        
+        
+        <div class="container-fluid" id='opponentTurn'>
+    <div class="row">
+      <div class="col-3" id="pauseDiv">
+        <BR>
+        <button id='Opause' type="button" class="btn btn-secondary">Pause</button>
+
+      </div>
+      <div class="col-6" id='OtimerDiv'><span id='OtimerCount'>90:00</span></div>
+
+      <div class="col-3" id='resetDiv'><br>
+        <button id='Oreset' type="button" class="btn btn-secondary">Reset</button>
+      </div>
+
+      <div class="col-3" id='counterDiv' style="text-align:center;">
+        
+        <div class='main'>
+          <input class='OcpCounter' type="text" placeholder="value..." value='0' />
+          <button class='up_count btn btn-info OcpCounter' title='Up'>+<i class='icon-plus'></i></button>
+          <button class='down_count btn btn-info OcpCounter' title='Down'>-<i class='icon-minus'></i></button>
+        </div>
+        CP
+      </div>
+        
+      <div class="col-6" id='counterDiv' style="text-align:center;">
+        <h1>OPPONENT TURN</h1>
+      </div>
+        
+      <div class="col-3" id='counterDiv' style="text-align:center;">
+        <input class='OvpCounter' type="text" placeholder="value..." value='0' />
+        <button class='up_count btn btn-info OvpCounter' title='Up'>+<i class='icon-plus'></i></button>
+        <button class='down_count btn btn-info OvpCounter' title='Down'>-<i class='icon-minus'></i></button> VP
+      </div>
+        
+        
+      <button class="accordion pregame">Pre-Game</button>
+      <div class="panel pregame">
+        <div id="myDIV" class="header">
+
+          <input type="text" id="OpreGameInput" placeholder="Add Item">
+          <span onclick="OnewElement()" class="addBtn">Add</span>
+        </div>
+
+        <ul id="OmyUL">
+        </ul>
+      </div>
+      <button class="accordion movement">Movement</button>
+      <div class="panel movement">
+        <div id="myDIV" class="header">
+
+          <input type="text" id="OmovementInput" placeholder="Add Item">
+          <span onclick="OmoveElement()" class="addBtn">Add</span>
+        </div>
+
+        <ul id="OmoveUL">
+      </div>
+
+      <button class="accordion psychic">Psychic</button>
+      <div class="panel psychic">
+        <div id="myDIV" class="header">
+
+          <input type="text" id="OpsychicInput" placeholder="Add Item">
+          <span onclick="OnewPsychicElement()" class="addBtn">Add</span>
+        </div>
+
+        <ul id="OpsyUL">
+        </ul>
+      </div>
+
+      <button class="accordion shooting" >Shooting</button>
+      <div class="panel shooting" >
+        <div id="myDIV" class="header">
+          <input type="text" id="OshootInput" placeholder="Add Item">
+          <span onclick="OshootElement()" class="addBtn">Add</span>
+
+        </div>
+        <ul id="OshootUL">
+      </div>
+
+      <button class="accordion charge">Charge</button>
+      <div class="panel charge">
+        <div id="myDIV" class="header">
+          <input type="text" id="OchargeInput" placeholder="Add Item">
+          <span onclick="OchargeElement()" class="addBtn">Add</span>
+
+        </div>
+        <ul id="OchargeUL">
+      </div>
+
+      <button class="accordion fight">Fight</button>
+      <div class="panel fight">
+        <div id="myDIV" class="header">
+          <input type="text" id="OfightInput" placeholder="Add Item">
+          <span onclick="OfightElement()" class="addBtn">Add</span>
+
+        </div>
+        <ul id="OfightUL">
+      </div>
+
+      <button class="accordion morale">Morale</button>
+      <div class="panel morale">
+        <div id="myDIV" class="header">
+          <input type="text" id="OmoraleInput" placeholder="Add Item">
+          <span onclick="OmoraleElement()" class="addBtn">Add</span>
+
+        </div>
+        <ul id="OmoraleUL">
+      </div>
+    </div>
+          <button id='endturn' type="button" class="btn btn-secondary" style="position:fixed;left: 50%; margin-right: -50%;transform: translate(-50%, 20%);">END TURN</button>
+  </div>
+
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

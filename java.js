@@ -120,39 +120,6 @@ function newElement() {
 }
 // movement----------------------------------------------------------------------
 
-// Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
-
-// Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  };
-}
-
-// Add a "checked" symbol when clicking on a list item
-var list = document.querySelector("ul");
-list.addEventListener(
-  "click",
-  function(ev) {
-    if (ev.target.tagName === "LI") {
-      ev.target.classList.toggle("checked");
-    }
-  },
-  false
-);
-
 // Create a new list item when clicking on the "Add" button
 function moveElement() {
   var li = document.createElement("li");
@@ -181,39 +148,6 @@ function moveElement() {
 }
 // psychicInput ----------------------------------------------------------------------
 
-// Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
-
-// Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  };
-}
-
-// Add a "checked" symbol when clicking on a list item
-var list = document.querySelector("ul");
-list.addEventListener(
-  "click",
-  function(ev) {
-    if (ev.target.tagName === "LI") {
-      ev.target.classList.toggle("checked");
-    }
-  },
-  false
-);
-
 function newPsychicElement() {
   var li = document.createElement("li");
   var inputValue = document.getElementById("psychicInput").value;
@@ -240,39 +174,6 @@ function newPsychicElement() {
   }
 }
 // shooting ----------------------------------------------------------------------
-
-// Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
-
-// Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  };
-}
-
-// Add a "checked" symbol when clicking on a list item
-var list = document.querySelector("ul");
-list.addEventListener(
-  "click",
-  function(ev) {
-    if (ev.target.tagName === "LI") {
-      ev.target.classList.toggle("checked");
-    }
-  },
-  false
-);
 
 function shootElement() {
   var li = document.createElement("li");
@@ -302,39 +203,6 @@ function shootElement() {
 
 // charge ----------------------------------------------------------------------
 
-// Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
-
-// Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  };
-}
-
-// Add a "checked" symbol when clicking on a list item
-var list = document.querySelector("ul");
-list.addEventListener(
-  "click",
-  function(ev) {
-    if (ev.target.tagName === "LI") {
-      ev.target.classList.toggle("checked");
-    }
-  },
-  false
-);
-
 function chargeElement() {
   var li = document.createElement("li");
   var inputValue = document.getElementById("chargeInput").value;
@@ -361,39 +229,6 @@ function chargeElement() {
   }
 }
 // fight ----------------------------------------------------------------------
-
-// Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
-
-// Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  };
-}
-
-// Add a "checked" symbol when clicking on a list item
-var list = document.querySelector("ul");
-list.addEventListener(
-  "click",
-  function(ev) {
-    if (ev.target.tagName === "LI") {
-      ev.target.classList.toggle("checked");
-    }
-  },
-  false
-);
 
 function fightElement() {
   var li = document.createElement("li");
@@ -422,39 +257,6 @@ function fightElement() {
 }
 // morale ----------------------------------------------------------------------
 
-// Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
-
-// Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  };
-}
-
-// Add a "checked" symbol when clicking on a list item
-var list = document.querySelector("ul");
-list.addEventListener(
-  "click",
-  function(ev) {
-    if (ev.target.tagName === "LI") {
-      ev.target.classList.toggle("checked");
-    }
-  },
-  false
-);
-
 function moraleElement() {
   var li = document.createElement("li");
   var inputValue = document.getElementById("moraleInput").value;
@@ -481,6 +283,40 @@ function moraleElement() {
   }
 }
 
-document.addEventListener("deviceready", function(){
-  alert("Device ready Fire");
-},true);
+//  counters ---------------------------------
+
+$(".vpCounter").click(function(e) {
+  var button_classes;
+  var value = +$(".vpCounter").val();
+  button_classes = $(e.currentTarget).prop("class");
+  if (button_classes.indexOf("up_count") !== -1) {
+    value = value + 1;
+  } else {
+    value = value - 1;
+  }
+  value = value < 0 ? 0 : value;
+  $(".vpCounter").val(value);
+});
+$(".vpCounter").click(function() {
+  $(this)
+    .focus()
+    .select();
+});
+
+$(".cpCounter").click(function(e) {
+  var button_classes;
+  var value = +$(".cpCounter").val();
+  button_classes = $(e.currentTarget).prop("class");
+  if (button_classes.indexOf("up_count") !== -1) {
+    value = value + 1;
+  } else {
+    value = value - 1;
+  }
+  value = value < 0 ? 0 : value;
+  $(".cpCounter").val(value);
+});
+$(".cpCounter").click(function() {
+  $(this)
+    .focus()
+    .select();
+});

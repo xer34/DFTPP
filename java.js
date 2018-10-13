@@ -1,3 +1,6 @@
+$("#opponentturn").hide();
+
+
 // ACCORDIAN ----------------------------------------------------------------------
 
 $(".accordion").click(function() {

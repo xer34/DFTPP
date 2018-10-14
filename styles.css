@@ -338,7 +338,22 @@ input {
 .main {
   margin-left: 5px;
 }
-.counter {
+.cpCounter {
+  width: 45px;
+  border-radius: 0px !important;
+  text-align: center;
+}
+.vpCounter {
+  width: 45px;
+  border-radius: 0px !important;
+  text-align: center;
+}
+.OcpCounter {
+  width: 45px;
+  border-radius: 0px !important;
+  text-align: center;
+}
+.OvpCounter {
   width: 45px;
   border-radius: 0px !important;
   text-align: center;

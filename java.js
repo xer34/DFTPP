@@ -1,14 +1,20 @@
 $("#opponentTurn").hide();
 $("#yourturn").hide();
+$("#accordion").hide()
+$("#Oaccordion").hide()
 
 function hideLanding() {
   $("#landing").hide();
   $("#yourturn").show();
+  $("#accordion").show()
+  $('body').css("background", "#222222");
 }
 
 function OhideLanding() {
   $("#landing").hide();
   $("#opponentTurn").show();
+  $("#Oaccordion").show()
+  $('body').css("background", "#222222");
 }
 
 // ACCORDIAN ----------------------------------------------------------------------
@@ -34,6 +40,15 @@ $(".accordion").click(function() {
 var chessClock;
 var timerOn = false;
 var time = 5400;
+
+
+$("#sumbit-button").on("click", function(event) {
+  event.preventDefault();
+
+  time = $("#time").val();
+
+})
+
 
 $("#timerDiv").click(function() {
   clearInterval(chessClock);
@@ -79,7 +94,7 @@ $("#OtimerDiv").click(function() {
   clearInterval(OchessClock);
   OtimerOn = true;
   OchessClock = setInterval(function() {
-    time--;
+    Otime--;
     console.log(time);
     if (time >= 0) {
       var minutes = ~~(time / 60);
@@ -447,7 +462,9 @@ var OCount = 1
 
 $("#endturn").click(function() {
   $("#yourturn").hide();
+  $("#accordion").hide()
   $("#opponentTurn").show();
+  $("#Oaccordion").show()
   clearInterval(chessClock);
   console.log("stopping");
   count++
@@ -460,7 +477,9 @@ $("#endturn").click(function() {
 
 $("#Oendturn").click(function() {
   $("#opponentTurn").hide();
+  $("#Oaccordion").hide()
   $("#yourturn").show();
+  $("#accordion").show()
   clearInterval(OchessClock);
   console.log("stopping");
   OCount++

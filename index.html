@@ -34,13 +34,13 @@
           <button id='pause' type="button" class="btn btn-secondary">Pause</button>
         </div>
         <div class="col-6" id='timerDiv'><span id='timerCount'>90:00</span></div>
-        <div class="col-3" id='resetDiv'><br>
+        <div class="col-3" id='resetDiv'>
           <button id='reset' type="button" class="btn btn-secondary">Reset</button>
         </div>
         <div class="col-4" id='counterDiv' style="text-align:center;">
           <input id='cpNumBox' class='cpCounter' type="text" placeholder="value..." value='0' />
-          <button id='CPPlus' class='up_count btn btn-info cpCounter' title='Up'>+<i class='icon-plus'></i></button>
-          <span id='cp'>CP</span><button id='CPMinus' class='down_count btn btn-info cpCounter' title='Down'>-<i class='icon-minus'></i></button>
+          <button id='CPPlus' class='up_count btn btn-dark cpCounter' title='Up'>+<i class='icon-plus'></i></button>
+          <span id='cp'>CP</span><button id='CPMinus' class='down_count btn btn-dark cpCounter' title='Down'>-<i class='icon-minus'></i></button>
         </div>
         <div class="col-4" id='counterDiv' style="text-align:center;">
           <h3>YOUR TURN <span id='turncounter'>1</span></h3>
@@ -48,99 +48,96 @@
 
         <div class="col-4" id='counterDiv' style="text-align:center;">
           <input id='vpNumBox' class='vpCounter' type="text" placeholder="value..." value='0' />
-          <button id="VPPlus" class='up_count btn btn-info vpCounter' title='Up'>+<i class='icon-plus'></i></button>
-          <button id="VPMinus" class='down_count btn btn-info vpCounter' title='Down'>-<i class='icon-minus'></i></button>
+          <button id="VPPlus" class='up_count btn btn-dark vpCounter' title='Up'>+<i class='icon-plus'></i></button>
+          <button id="VPMinus" class='down_count btn btn-dark vpCounter' title='Down'>-<i class='icon-minus'></i></button>
           <span id='vp'>VP</span>
         </div>
       </div>
     </div>
-
-<BR>
-
-    <div class="container-fluid">
-      <div class="row">
-
-
-        <button class="accordion pregame">Pre-Game</button>
-        <div class="panel pregame">
-          <div id="myDIV" class="header">
-
-            <input type="text" id="preGameInput" placeholder="Add Item">
-            <span onclick="newElement()" class="addBtn">Add</span>
-          </div>
-
-          <ul id="myUL">
-          </ul>
-        </div>
-        <button class="accordion movement">Movement</button>
-        <div class="panel movement">
-          <div id="myDIV" class="header">
-
-            <input type="text" id="movementInput" placeholder="Add Item">
-            <span onclick="moveElement()" class="addBtn">Add</span>
-          </div>
-
-          <ul id="moveUL">
-        </div>
-
-        <button class="accordion psychic">Psychic</button>
-        <div class="panel psychic">
-          <div id="myDIV" class="header">
-
-            <input type="text" id="psychicInput" placeholder="Add Item">
-            <span onclick="newPsychicElement()" class="addBtn">Add</span>
-          </div>
-
-          <ul id="psyUL">
-          </ul>
-        </div>
-
-        <button class="accordion shooting">Shooting</button>
-        <div class="panel shooting">
-          <div id="myDIV" class="header">
-            <input type="text" id="shootInput" placeholder="Add Item">
-            <span onclick="shootElement()" class="addBtn">Add</span>
-
-          </div>
-          <ul id="shootUL">
-        </div>
-
-        <button class="accordion charge">Charge</button>
-        <div class="panel charge">
-          <div id="myDIV" class="header">
-            <input type="text" id="chargeInput" placeholder="Add Item">
-            <span onclick="chargeElement()" class="addBtn">Add</span>
-
-          </div>
-          <ul id="chargeUL">
-        </div>
-
-        <button class="accordion fight">Fight</button>
-        <div class="panel fight">
-          <div id="myDIV" class="header">
-            <input type="text" id="fightInput" placeholder="Add Item">
-            <span onclick="fightElement()" class="addBtn">Add</span>
-
-          </div>
-          <ul id="fightUL">
-        </div>
-
-        <button class="accordion morale">Morale</button>
-        <div class="panel morale">
-          <div id="myDIV" class="header">
-            <input type="text" id="moraleInput" placeholder="Add Item">
-            <span onclick="moraleElement()" class="addBtn">Add</span>
-
-          </div>
-          <ul id="moraleUL">
-        </div>
-      </div>
-      <button id='endturn' type="button" class="btn btn-secondary" style="position:fixed;left: 50%; margin-right: -50%;transform: translate(-50%, 20%);">END
-        TURN</button>
-
-
-    </div>
+    <BR>
   </div>
+
+
+  <div class="container-fluid" id='accordion'>
+    <button class="accordion pregame">Pre-Game</button>
+    <div class="panel pregame">
+      <div id="myDIV" class="header">
+
+        <input type="text" id="preGameInput" placeholder="Add Item">
+        <span onclick="newElement()" class="addBtn">Add</span>
+      </div>
+
+      <ul id="myUL">
+      </ul>
+    </div>
+    <button class="accordion movement">Movement</button>
+    <div class="panel movement">
+      <div id="myDIV" class="header">
+
+        <input type="text" id="movementInput" placeholder="Add Item">
+        <span onclick="moveElement()" class="addBtn">Add</span>
+      </div>
+
+      <ul id="moveUL">
+    </div>
+
+    <button class="accordion psychic">Psychic</button>
+    <div class="panel psychic">
+      <div id="myDIV" class="header">
+
+        <input type="text" id="psychicInput" placeholder="Add Item">
+        <span onclick="newPsychicElement()" class="addBtn">Add</span>
+      </div>
+
+      <ul id="psyUL">
+      </ul>
+    </div>
+
+    <button class="accordion shooting">Shooting</button>
+    <div class="panel shooting">
+      <div id="myDIV" class="header">
+        <input type="text" id="shootInput" placeholder="Add Item">
+        <span onclick="shootElement()" class="addBtn">Add</span>
+
+      </div>
+      <ul id="shootUL">
+    </div>
+
+    <button class="accordion charge">Charge</button>
+    <div class="panel charge">
+      <div id="myDIV" class="header">
+        <input type="text" id="chargeInput" placeholder="Add Item">
+        <span onclick="chargeElement()" class="addBtn">Add</span>
+
+      </div>
+      <ul id="chargeUL">
+    </div>
+
+    <button class="accordion fight">Fight</button>
+    <div class="panel fight">
+      <div id="myDIV" class="header">
+        <input type="text" id="fightInput" placeholder="Add Item">
+        <span onclick="fightElement()" class="addBtn">Add</span>
+
+      </div>
+      <ul id="fightUL">
+    </div>
+
+    <button class="accordion morale">Morale</button>
+    <div class="panel morale">
+      <div id="myDIV" class="header">
+        <input type="text" id="moraleInput" placeholder="Add Item">
+        <span onclick="moraleElement()" class="addBtn">Add</span>
+
+      </div>
+      <ul id="moraleUL">
+    </div>
+    <br>
+    <button id='endturn' type="button" class="btn btn-secondary">END
+      TURN</button>
+  </div>
+
+
 
   <!-- Opponent Turn Section ----------------------------------------------- -->
   <div id='opponentTurn'>
@@ -153,15 +150,15 @@
         </div>
         <div class="col-6" id='OtimerDiv'><span id='OtimerCount' style="color: red">90:00</span></div>
 
-        <div class="col-3" id='resetDiv'><br>
+        <div class="col-3" id='resetDiv'>
           <button id='Oreset' type="button" class="btn btn-secondary">Reset</button>
         </div>
 
         <div class="col-4" id='counterDiv' style="text-align:center;">
           <input id='cpNumBox' class='OcpCounter' type="text" placeholder="value..." value='0' />
-          <button id='CPPlus' class='up_count btn btn-info OcpCounter' title='Up'>+<i class='icon-plus'></i></button>
+          <button id='CPPlus' class='up_count btn btn-dark OcpCounter' title='Up'>+<i class='icon-plus'></i></button>
           <span id='cp'>CP</span>
-          <button id='CPMinus' class='down_count btn btn-info OcpCounter' title='Down'>-<i class='icon-minus'></i></button>
+          <button id='CPMinus' class='down_count btn btn-dark OcpCounter' title='Down'>-<i class='icon-minus'></i></button>
         </div>
 
         <div class="col-4" id='counterDiv' style="text-align:center;">
@@ -170,96 +167,120 @@
 
         <div class="col-4" id='counterDiv' style="text-align:center;">
           <input id='vpNumBox' class='OvpCounter' type="text" placeholder="value..." value='0' />
-          <button id='VPPlus' class='up_count btn btn-info OvpCounter' title='Up'>+<i class='icon-plus'></i></button>
-          <button id='VPMinus' class='down_count btn btn-info OvpCounter' title='Down'>-<i class='icon-minus'></i></button><span
+          <button id='VPPlus' class='up_count btn btn-dark OvpCounter' title='Up'>+<i class='icon-plus'></i></button>
+          <button id='VPMinus' class='down_count btn btn-dark OvpCounter' title='Down'>-<i class='icon-minus'></i></button><span
             id='vp'> VP </span>
         </div>
 
       </div>
     </div>
-<BR>
-    <div class="container-fluid">
-      <div class="row">
+  </div>
 
-        <button class="accordion pregame">Pre-Game</button>
-        <div class="panel pregame">
-          <div id="myDIV" class="header">
+  <BR>
+  <div class="container-fluid" id='Oaccordion'>
 
-            <input type="text" id="OpreGameInput" placeholder="Add Item">
-            <span onclick="OnewElement()" class="addBtn">Add</span>
-          </div>
 
-          <ul id="OmyUL">
-          </ul>
-        </div>
-        <button class="accordion movement">Movement</button>
-        <div class="panel movement">
-          <div id="myDIV" class="header">
+    <button class="accordion pregame">Pre-Game</button>
+    <div class="panel pregame">
+      <div id="myDIV" class="header">
 
-            <input type="text" id="OmovementInput" placeholder="Add Item">
-            <span onclick="OmoveElement()" class="addBtn">Add</span>
-          </div>
-
-          <ul id="OmoveUL">
-        </div>
-
-        <button class="accordion psychic">Psychic</button>
-        <div class="panel psychic">
-          <div id="myDIV" class="header">
-
-            <input type="text" id="OpsychicInput" placeholder="Add Item">
-            <span onclick="OnewPsychicElement()" class="addBtn">Add</span>
-          </div>
-
-          <ul id="OpsyUL">
-          </ul>
-        </div>
-
-        <button class="accordion shooting">Shooting</button>
-        <div class="panel shooting">
-          <div id="myDIV" class="header">
-            <input type="text" id="OshootInput" placeholder="Add Item">
-            <span onclick="OshootElement()" class="addBtn">Add</span>
-
-          </div>
-          <ul id="OshootUL">
-        </div>
-
-        <button class="accordion charge">Charge</button>
-        <div class="panel charge">
-          <div id="myDIV" class="header">
-            <input type="text" id="OchargeInput" placeholder="Add Item">
-            <span onclick="OchargeElement()" class="addBtn">Add</span>
-
-          </div>
-          <ul id="OchargeUL">
-        </div>
-
-        <button class="accordion fight">Fight</button>
-        <div class="panel fight">
-          <div id="myDIV" class="header">
-            <input type="text" id="OfightInput" placeholder="Add Item">
-            <span onclick="OfightElement()" class="addBtn">Add</span>
-
-          </div>
-          <ul id="OfightUL">
-        </div>
-
-        <button class="accordion morale">Morale</button>
-        <div class="panel morale">
-          <div id="myDIV" class="header">
-            <input type="text" id="OmoraleInput" placeholder="Add Item">
-            <span onclick="OmoraleElement()" class="addBtn">Add</span>
-
-          </div>
-          <ul id="OmoraleUL">
-        </div>
+        <input type="text" id="OpreGameInput" placeholder="Add Item">
+        <span onclick="OnewElement()" class="addBtn">Add</span>
       </div>
-      <button id='Oendturn' type="button" class="btn btn-secondary" style="position:fixed;left: 50%; margin-right: -50%;transform: translate(-50%, 20%);">END
-        TURN</button>
+
+      <ul id="OmyUL">
+      </ul>
     </div>
+    <button class="accordion movement">Movement</button>
+    <div class="panel movement">
+      <div id="myDIV" class="header">
+
+        <input type="text" id="OmovementInput" placeholder="Add Item">
+        <span onclick="OmoveElement()" class="addBtn">Add</span>
+      </div>
+
+      <ul id="OmoveUL">
+    </div>
+
+    <button class="accordion psychic">Psychic</button>
+    <div class="panel psychic">
+      <div id="myDIV" class="header">
+
+        <input type="text" id="OpsychicInput" placeholder="Add Item">
+        <span onclick="OnewPsychicElement()" class="addBtn">Add</span>
+      </div>
+
+      <ul id="OpsyUL">
+      </ul>
+    </div>
+
+    <button class="accordion shooting">Shooting</button>
+    <div class="panel shooting">
+      <div id="myDIV" class="header">
+        <input type="text" id="OshootInput" placeholder="Add Item">
+        <span onclick="OshootElement()" class="addBtn">Add</span>
+
+      </div>
+      <ul id="OshootUL">
+    </div>
+
+    <button class="accordion charge">Charge</button>
+    <div class="panel charge">
+      <div id="myDIV" class="header">
+        <input type="text" id="OchargeInput" placeholder="Add Item">
+        <span onclick="OchargeElement()" class="addBtn">Add</span>
+
+      </div>
+      <ul id="OchargeUL">
+    </div>
+
+    <button class="accordion fight">Fight</button>
+    <div class="panel fight">
+      <div id="myDIV" class="header">
+        <input type="text" id="OfightInput" placeholder="Add Item">
+        <span onclick="OfightElement()" class="addBtn">Add</span>
+
+      </div>
+      <ul id="OfightUL">
+    </div>
+
+    <button class="accordion morale">Morale</button>
+    <div class="panel morale">
+      <div id="myDIV" class="header">
+        <input type="text" id="OmoraleInput" placeholder="Add Item">
+        <span onclick="OmoraleElement()" class="addBtn">Add</span>
+
+      </div>
+      <ul id="OmoraleUL">
+    </div>
+    <br>
+    <button id='Oendturn' type="button" class="btn btn-secondary">END
+      TURN</button>
   </div>
   </div>
+  </div>
+
+
+  <!-- <div class="container-fluid">
+   
+        <form>
+            <div class="form-group">
+              <label for="timeHHMM">Game Round Length</label>
+              <input type="number" class="form-control" id="timeHHMM"  placeholder="MMMM" min="1" max="9999">
+              <small id="emailHelp" class="form-text text-muted">Enter Total Game Length in Minutes</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-dark">Submit</button>
+          </form>
+  
+  </div> -->
 
 
 

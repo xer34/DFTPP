@@ -45,8 +45,12 @@ body {
   top: 3%;
   left: 7%;
 }
-
-#reset {
+#startTimer {
+  position: fixed;
+  top: 3%;
+  right: 7%;
+}
+#OstartTimer {
   position: fixed;
   top: 3%;
   right: 7%;

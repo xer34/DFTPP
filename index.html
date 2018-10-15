@@ -15,6 +15,9 @@
 </head>
 
 <body>
+
+  <!-- landing page ------------------------------------------------------------- -->
+
   <div id='landing'>
 
     <button id='startButton' onclick="hideLanding()" type="button" class="btn btn-secondary">Your
@@ -26,6 +29,7 @@
 
   </div>
 
+  <!-- your turn ------------------------------------------------------------- -->
 
   <div id='yourturn'>
     <div class="container-fluid">
@@ -35,7 +39,7 @@
         </div>
         <div class="col-6" id='timerDiv'><span id='timerCount'>90:00</span></div>
         <div class="col-3" id='resetDiv'>
-          <button id='reset' type="button" class="btn btn-secondary">Reset</button>
+          <button id='startTimer' type="button" class="btn btn-secondary">Start</button>
         </div>
         <div class="col-4" id='counterDiv' style="text-align:center;">
           <input id='cpNumBox' class='cpCounter' type="text" placeholder="value..." value='0' />
@@ -57,6 +61,7 @@
     <BR>
   </div>
 
+  <!-- accordion  ------------------------------------------------------------- -->
 
   <div class="container-fluid" id='accordion'>
     <button class="accordion pregame">Pre-Game</button>
@@ -137,9 +142,9 @@
       TURN</button>
   </div>
 
-
-
   <!-- Opponent Turn Section ----------------------------------------------- -->
+
+
   <div id='opponentTurn'>
     <div class="container-fluid">
       <div class="row">
@@ -151,7 +156,7 @@
         <div class="col-6" id='OtimerDiv'><span id='OtimerCount' style="color: red">90:00</span></div>
 
         <div class="col-3" id='resetDiv'>
-          <button id='Oreset' type="button" class="btn btn-secondary">Reset</button>
+          <button id='OstartTimer' type="button" class="btn btn-secondary">Start</button>
         </div>
 
         <div class="col-4" id='counterDiv' style="text-align:center;">
@@ -175,6 +180,8 @@
       </div>
     </div>
   </div>
+
+  <!-- opponent accordion ------------------------------------------------------------- -->
 
   <BR>
   <div class="container-fluid" id='Oaccordion'>
@@ -260,27 +267,23 @@
   </div>
   </div>
 
+  <!-- settings ------------------------------------------------------------- -->
 
-  <!-- <div class="container-fluid">
-   
-        <form>
-            <div class="form-group">
-              <label for="timeHHMM">Game Round Length</label>
-              <input type="number" class="form-control" id="timeHHMM"  placeholder="MMMM" min="1" max="9999">
-              <small id="emailHelp" class="form-text text-muted">Enter Total Game Length in Minutes</small>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            </div>
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-dark">Submit</button>
-          </form>
-  
-  </div> -->
+  <div class="container-fluid" id='settings'>
+
+    <form>
+      <div class="form-group">
+        <label for="timeHHMM">Game Round Length</label>
+        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="4" class="form-control" id="timeMMMM" placeholder="MMMM">
+        <small id="emailHelp" class="form-text text-muted">Enter Total Game Length in Minutes</small>
+      </div>
+
+      <button type="button" onclick='setGameTime()' class="btn btn-dark">Submit</button>
+    </form>
+
+  </div>
+
+  <!-- settings ------------------------------------------------------------- -->
 
 
 

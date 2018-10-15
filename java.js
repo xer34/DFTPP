@@ -2,6 +2,7 @@ $("#opponentTurn").hide();
 $("#yourturn").hide();
 $("#accordion").hide()
 $("#Oaccordion").hide()
+$("#settings").hide();
 
 function hideLanding() {
   $("#landing").hide();
@@ -15,6 +16,10 @@ function OhideLanding() {
   $("#opponentTurn").show();
   $("#Oaccordion").show()
   $('body').css("background", "#222222");
+}
+
+function showSettings() {
+$('#settings').show();
 }
 
 // ACCORDIAN ----------------------------------------------------------------------
@@ -39,10 +44,22 @@ $(".accordion").click(function() {
 // TIMER ----------------------------------------------------------------------
 var chessClock;
 var timerOn = false;
-var time = 5400;
+var time = 5400
+var customTime = false;
 
+function setGameTime() {
+    customTime = true;
+  time = ($('#timeMMMM').val() * 60) / 2
+  Otime = ($('#timeMMMM').val() * 60) / 2
+  var minutes = ~~(time / 60);
+  var seconds = time - minutes * 60;
+      span = document.getElementById("timerCount");
+      span.innerHTML = minutes + ":" + seconds;
+      $("#settings").hide()
+      console.log(time)
+  }
 
-$("#timerDiv").click(function() {
+$("#startTimer").click(function() {
   clearInterval(chessClock);
   timerOn = true;
   chessClock = setInterval(function() {
@@ -64,13 +81,13 @@ $("#timerDiv").click(function() {
   }, 1000);
 });
 
-$("#reset").click(function() {
-  clearInterval(chessClock);
-  time = 5400;
-  span = document.getElementById("timerCount");
-  span.innerHTML = "90:00";
-  console.log("Reset");
-});
+// $("#reset").click(function() {
+//   clearInterval(chessClock);
+//   time = 5400;
+//   span = document.getElementById("timerCount");
+//   span.innerHTML = "90:00";
+//   console.log("Reset");
+// });
 
 $("#pause").click(function() {
   console.log("Stopping");
@@ -80,9 +97,9 @@ $("#pause").click(function() {
 // OPPONENT TIMER ----------------------------------------------------------------------
 var OchessClock;
 var OtimerOn = false;
-var Otime = 5400;
+var Otime = 5400
 
-$("#OtimerDiv").click(function() {
+$("#OstartTimer").click(function() {
   clearInterval(OchessClock);
   OtimerOn = true;
   OchessClock = setInterval(function() {
@@ -104,13 +121,13 @@ $("#OtimerDiv").click(function() {
   }, 1000);
 });
 
-$("#Oreset").click(function() {
-  clearInterval(OchessClock);
-  Otime = 5400;
-  span = document.getElementById("OtimerCount");
-  span.innerHTML = "90:00";
-  console.log("Opponet Reset");
-});
+// $("#Oreset").click(function() {
+//   clearInterval(OchessClock);
+//   Otime = 5400;
+//   span = document.getElementById("OtimerCount");
+//   span.innerHTML = "90:00";
+//   console.log("Opponet Reset");
+// });
 
 $("#Opause").click(function() {
   console.log("Opponent Stopping");

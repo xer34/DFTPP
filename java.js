@@ -42,14 +42,6 @@ var timerOn = false;
 var time = 5400;
 
 
-$("#sumbit-button").on("click", function(event) {
-  event.preventDefault();
-
-  time = $("#time").val();
-
-})
-
-
 $("#timerDiv").click(function() {
   clearInterval(chessClock);
   timerOn = true;
@@ -95,18 +87,18 @@ $("#OtimerDiv").click(function() {
   OtimerOn = true;
   OchessClock = setInterval(function() {
     Otime--;
-    console.log(time);
-    if (time >= 0) {
-      var minutes = ~~(time / 60);
-      var seconds = time - minutes * 60;
+    console.log(Otime);
+    if (Otime >= 0) {
+      var Ominutes = ~~(Otime / 60);
+      var Oseconds = Otime - Ominutes * 60;
       span = document.getElementById("OtimerCount");
-      span.innerHTML = minutes + ":" + seconds;
+      span.innerHTML = Ominutes + ":" + Oseconds;
     }
     if (Otime === 0) {
       alert("You are out of time.");
       clearInterval(Otime);
     }
-    if ((timerOn = true)) {
+    if ((OtimerOn = true)) {
       clearInterval(Otime);
     }
   }, 1000);

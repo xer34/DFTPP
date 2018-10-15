@@ -442,11 +442,20 @@ $(".cpCounter").click(function() {
 
 //  end turn button ---------------------------------
 
+var count = 1
+var OCount = 1
+
 $("#endturn").click(function() {
   $("#yourturn").hide();
   $("#opponentTurn").show();
   clearInterval(chessClock);
   console.log("stopping");
+  count++
+  $("#turncounter").text(count)
+  if (count > 1) {
+    $(".pregame").hide()
+  }
+  
 });
 
 $("#Oendturn").click(function() {
@@ -454,6 +463,13 @@ $("#Oendturn").click(function() {
   $("#yourturn").show();
   clearInterval(OchessClock);
   console.log("stopping");
+  OCount++
+  console.log("enemy turn " + OCount)
+  $("#Oturncounter").text(OCount)
+  if (OCount > 1) {
+    $(".pregame").hide()
+  }
+  
 });
 
 //  OPPONENT counters ---------------------------------

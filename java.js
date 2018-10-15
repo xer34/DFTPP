@@ -1,4 +1,15 @@
 $("#opponentTurn").hide();
+$("#yourturn").hide();
+
+function hideLanding() {
+  $("#landing").hide();
+  $("#yourturn").show();
+}
+
+function OhideLanding() {
+  $("#landing").hide();
+  $("#opponentTurn").show();
+}
 
 // ACCORDIAN ----------------------------------------------------------------------
 
@@ -441,7 +452,7 @@ $("#endturn").click(function() {
 $("#Oendturn").click(function() {
   $("#opponentTurn").hide();
   $("#yourturn").show();
-  clearInterval(chessClock);
+  clearInterval(OchessClock);
   console.log("stopping");
 });
 

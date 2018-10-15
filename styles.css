@@ -1,4 +1,12 @@
 html {
+  background-image: url("pic.jpg");
+  background-repeat: no-repeat;
+  background-color: black;
+  color: white;
+  background-size: 100vw 100vh;
+}
+
+body {
   background: #222222;
 }
 
@@ -13,9 +21,32 @@ html {
   background: #222222;
 }
 
-
 #resetDiv {
   background: #222222;
+}
+
+#pause {
+  position: fixed;
+  top: 3%;
+  left: 7%;
+}
+
+#reset {
+  position: fixed;
+  top: 3%;
+  right: 7%;
+}
+
+#Opause {
+  position: fixed;
+  top: 3%;
+  left: 7%;
+}
+
+#Oreset {
+  position: fixed;
+  top: 3%;
+  right: 7%;
 }
 
 #counterDiv {
@@ -42,7 +73,7 @@ html {
 }
 
 #startButton {
-  position: absolute;
+  position: fixed;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -51,15 +82,27 @@ html {
   display: inline-block;
   font-size: 16px;
   margin: auto;
-  width: 40%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, 600%);
+  width: 50%;
+  top: 70%;
+  left: 25%;
 }
 
+#OstartButton {
+  position: fixed;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+  width: 50%;
+  top: 80%;
+  left: 25%;
+}
 
-
-#backButton {
+#showSettingsButton {
   position: fixed;
   border: none;
   color: white;
@@ -70,25 +113,8 @@ html {
   font-size: 16px;
   margin: auto;
   width: 40%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, 500%);
-}
-
-#howTo {
-  position: absolute;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: auto;
-  width: 40%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, 500%);
+  top: 90%;
+  left: 30%;
 }
 
 ol {
@@ -335,23 +361,85 @@ input {
 
 /* plus and minus button styling  ------------------------  */
 
-.main {
-  margin-left: 5px;
-}
-.counter {
+.cpCounter {
   width: 45px;
+  height: 45px;
+  padding: 5px;
   border-radius: 0px !important;
   text-align: center;
 }
-.up_count {
-  margin-bottom: 10px;
-  margin-left: -4px;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
+.vpCounter {
+  width: 45px;
+  height: 45px;
+  margin: 5px;
+  border-radius: 0px !important;
+  text-align: center;
 }
-.down_count {
-  margin-bottom: 10px;
-  margin-right: -4px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
+.OcpCounter {
+  width: 45px;
+  height: 45px;
+  padding: 5px;
+  border-radius: 0px !important;
+  text-align: center;
 }
+.OvpCounter {
+  width: 45px;
+  height: 45px;
+  margin: 5px;
+  border-radius: 0px !important;
+  text-align: center;
+}
+
+#vp {
+  position: fixed;
+  top: 19%;
+  right: 6%;
+  font-weight: bold;
+}
+
+#cp {
+  position: fixed;
+  top: 19%;
+  left: 6%;
+  font-weight: bold;
+}
+
+#VPPlus {
+  position: fixed;
+  top: 10%;
+  right: 15%;
+  height: 45px;
+}
+
+#VPMinus {
+  position: fixed;
+  top: 17%;
+  right: 15%;
+  height: 45px;
+}
+
+#vpNumBox {
+  position: fixed;
+  top: 12%;
+  right: 2%;
+}
+
+#CPPlus {
+  position: fixed;
+  top: 10%;
+  left: 15%;
+}
+
+#CPMinus {
+  position: fixed;
+  top: 17%;
+  left: 15%;
+}
+
+#cpNumBox {
+  position: fixed;
+  top: 12%;
+  left: 2%;
+}
+
+/* ---------------------------------------------------- */

@@ -371,7 +371,7 @@ input {
 .vpCounter {
   width: 45px;
   height: 45px;
-  margin: 5px;
+
   border-radius: 0px !important;
   text-align: center;
 }
@@ -385,7 +385,7 @@ input {
 .OvpCounter {
   width: 45px;
   height: 45px;
-  margin: 5px;
+
   border-radius: 0px !important;
   text-align: center;
 }

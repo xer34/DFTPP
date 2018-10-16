@@ -28,7 +28,7 @@
  <preference name="SplashScreenDelay" value="2" />
     <config-file platform="android" parent="/manifest" mode="merge">
 
-    <application android:debuggable="true"/>
+    <application android:debuggable="false"/>
 
 </config-file>
 <widget xmlns="http://www.w3.org/ns/widgets">

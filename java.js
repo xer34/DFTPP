@@ -57,6 +57,11 @@ function setGameTime() {
       span.innerHTML = minutes + ":" + seconds;
       $("#settings").hide()
       console.log(time)
+      console.log(Otime)
+      var Ominutes = ~~(Otime / 60);
+      var Oseconds = Otime - Ominutes * 60;
+      span = document.getElementById("OtimerCount");
+      span.innerHTML = Ominutes + ":" + Oseconds;
   }
 
 $("#startTimer").click(function() {
@@ -70,6 +75,8 @@ $("#startTimer").click(function() {
       var seconds = time - minutes * 60;
       span = document.getElementById("timerCount");
       span.innerHTML = minutes + ":" + seconds;
+
+      
     }
     if (time === 0) {
       alert("You are out of time.");

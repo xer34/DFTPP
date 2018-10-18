@@ -28,8 +28,7 @@
         <allow-intent href="itms-apps:*" />
     </platform>
  <preference name="SplashScreenDelay" value="2" />
-
-</config-file>
+  
 <widget xmlns="http://www.w3.org/ns/widgets">
 <style type="text/css" id="night-mode-pro-style"/>
 <link type="text/css" rel="stylesheet" id="night-mode-pro-link"/>
@@ -90,3 +89,4 @@
 
 </platform>
 </widget>
+ 

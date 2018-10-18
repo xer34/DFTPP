@@ -1,8 +1,5 @@
-document.addEventListener("deviceready", onDeviceReady, false);
 
-function onDeviceReady() {
-    // Now safe to use the PhoneGap API
-    $("#opponentTurn").hide();
+$("#opponentTurn").hide();
 $("#yourturn").hide();
 $("#accordion").hide();
 $("#Oaccordion").hide();
@@ -822,4 +819,3 @@ function OmoraleElement() {
   }
 }
 
-}

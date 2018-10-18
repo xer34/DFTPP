@@ -1,25 +1,29 @@
-$("#opponentTurn").hide();
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+    // Now safe to use the PhoneGap API
+    $("#opponentTurn").hide();
 $("#yourturn").hide();
-$("#accordion").hide()
-$("#Oaccordion").hide()
+$("#accordion").hide();
+$("#Oaccordion").hide();
 $("#settings").hide();
 
 function hideLanding() {
   $("#landing").hide();
   $("#yourturn").show();
-  $("#accordion").show()
-  $('body').css("background", "#222222");
+  $("#accordion").show();
+  $("body").css("background", "#222222");
 }
 
 function OhideLanding() {
   $("#landing").hide();
   $("#opponentTurn").show();
-  $("#Oaccordion").show()
-  $('body').css("background", "#222222");
+  $("#Oaccordion").show();
+  $("body").css("background", "#222222");
 }
 
 function showSettings() {
-$('#settings').show();
+  $("#settings").show();
 }
 
 // ACCORDIAN ----------------------------------------------------------------------
@@ -44,25 +48,28 @@ $(".accordion").click(function() {
 // TIMER ----------------------------------------------------------------------
 var chessClock;
 var timerOn = false;
-var time = 5400
+var time = 5400;
 var customTime = false;
 
 function setGameTime() {
-    customTime = true;
-  time = ($('#timeMMMM').val() * 60) / 2
-  Otime = ($('#timeMMMM').val() * 60) / 2
+  customTime = true;
+  time = ($("#timeMMMM").val() * 60) / 2;
+  Otime = ($("#timeMMMM").val() * 60) / 2;
+
   var minutes = ~~(time / 60);
   var seconds = time - minutes * 60;
-      span = document.getElementById("timerCount");
-      span.innerHTML = minutes + ":" + seconds;
-      $("#settings").hide()
-      console.log(time)
-      console.log(Otime)
-      var Ominutes = ~~(Otime / 60);
-      var Oseconds = Otime - Ominutes * 60;
-      span = document.getElementById("OtimerCount");
-      span.innerHTML = Ominutes + ":" + Oseconds;
-  }
+  span = document.getElementById("timerCount");
+  span.innerHTML = minutes + ":" + seconds;
+
+  var Ominutes = ~~(Otime / 60);
+  var Oseconds = Otime - Ominutes * 60;
+  span = document.getElementById("OtimerCount");
+  span.innerHTML = Ominutes + ":" + Oseconds;
+
+  $("#settings").hide();
+  console.log(time);
+  console.log(Otime);
+}
 
 $("#startTimer").click(function() {
   clearInterval(chessClock);
@@ -75,8 +82,6 @@ $("#startTimer").click(function() {
       var seconds = time - minutes * 60;
       span = document.getElementById("timerCount");
       span.innerHTML = minutes + ":" + seconds;
-
-      
     }
     if (time === 0) {
       alert("You are out of time.");
@@ -104,7 +109,7 @@ $("#pause").click(function() {
 // OPPONENT TIMER ----------------------------------------------------------------------
 var OchessClock;
 var OtimerOn = false;
-var Otime = 5400
+var Otime = 5400;
 
 $("#OstartTimer").click(function() {
   clearInterval(OchessClock);
@@ -473,38 +478,36 @@ $(".cpCounter").click(function() {
 
 //  end turn button ---------------------------------
 
-var count = 1
-var OCount = 1
+var count = 1;
+var OCount = 1;
 
 $("#endturn").click(function() {
   $("#yourturn").hide();
-  $("#accordion").hide()
+  $("#accordion").hide();
   $("#opponentTurn").show();
-  $("#Oaccordion").show()
+  $("#Oaccordion").show();
   clearInterval(chessClock);
   console.log("stopping");
-  count++
-  $("#turncounter").text(count)
+  count++;
+  $("#turncounter").text(count);
   if (count > 1) {
-    $(".pregame").hide()
+    $(".pregame").hide();
   }
-  
 });
 
 $("#Oendturn").click(function() {
   $("#opponentTurn").hide();
-  $("#Oaccordion").hide()
+  $("#Oaccordion").hide();
   $("#yourturn").show();
-  $("#accordion").show()
+  $("#accordion").show();
   clearInterval(OchessClock);
   console.log("stopping");
-  OCount++
-  console.log("enemy turn " + OCount)
-  $("#Oturncounter").text(OCount)
+  OCount++;
+  console.log("enemy turn " + OCount);
+  $("#Oturncounter").text(OCount);
   if (OCount > 1) {
-    $(".pregame").hide()
+    $(".pregame").hide();
   }
-  
 });
 
 //  OPPONENT counters ---------------------------------
@@ -817,4 +820,6 @@ function OmoraleElement() {
       div.style.display = "none";
     };
   }
+}
+
 }

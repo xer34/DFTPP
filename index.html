@@ -281,10 +281,10 @@
       <div class="form-group">
         <label for="timeHHMM">Game Round Length</label>
         <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-          maxlength="4" class="form-control" id="timeMMMM" placeholder="MMMM">
-        <small id="emailHelp" class="form-text text-muted">Enter TOTAL Game Length in Minutes</small>
+          maxlength="4" class="form-control" id="timeMMMM" placeholder="Enter TOTAL Game Length in Minutes">
+       
       </div>
-
+<br>
       <button type="button" onclick='setGameTime()' class="btn btn-dark">Submit</button>
     </form>
 
@@ -293,32 +293,46 @@
   <!-- about this app ------------------------------------------------------------- -->
 
   <div class="container" id='aboutThisApp'>
+    <button onclick="location.href='https://www.patreon.com/xer34'" type="button">
+      Support Me On Patreon</button>
+    <br>
+    <br>
     <p>Created by an absent minded gamer, BattleTimer is your mobile Warhammer 40k Companion. <br>
     </p>
-    <p>Currently it's features include:</p><br>
-
-    <strong>Chess Clock</strong><br>
-    <ul>
-      <li>Default time is 90 minute player turns. This can be changed in the settings if you input your total game length in minutes. For example a 2:30 hour round would be input as a 180 minutes.</li>
-      <li>Clock will automatically pause when turn is ended.</li>
-    </ul>
-    <strong>Turn by Turn Checklist</strong><br>
-    <ul>
-      <li>Pregame, Movement, Shooting, Etc.</li>
-      <li>Pregame will disappear after the first battle round.</li>
-      <li>Checklists do not have a maximum number of items, however only 9 are visible at a time.</li>
-    </ul>
-    <strong>VP / CP Counters</strong><br>
-    <ul>
-      <li>Plus and minus will add and subract. I know. Super exciting.</li>
-
-    </ul>
-    <strong>Easy to Read<br>
+    <p>Currently it's features include:</p>
+    <button class="accordion"><strong>Chess Clock</strong></button>
+    <div class="panel">
+      <ul>
+        <li>Default time is 90 minute player turns. This can be changed in the settings if you input your total game length in minutes. For example a 2:30 hour round would be input as a 180 minutes.</li>
+        <li>Clock will automatically pause when turn is ended.</li>
+      </ul>
+    </div>
+    <button class="accordion"><strong>Turn by Turn Checklist</strong></button>
+    <div class="panel">
+      <ul>
+        <li>Pregame, Movement, Shooting, Etc.</li>
+        <li>Pregame will disappear after the first battle round.</li>
+        <li>Checklists do not have a maximum number of items, however only 9 are visible at a time.</li>
+      </ul>
+    </div>
+    <button class="accordion"><strong>VP / CP Counters</strong></button>
+    <div class="panel">
+      <ul>
+        <li>Plus and minus will add and subract. I know. Super exciting.</li>
+      </ul>
+    </div>
+    <button class="accordion"><strong>Easy to Read</strong></button>
+    <div class="panel">
+      <ul>
+        <li><b style="background-color: initial;"></b>Uses easy to read fonts, colors and styles to make things easy on the eyes, also uses black where possible to save on battery life.&nbsp;</li>
+      </ul>
+    </div>
+    <strong><br>
     </strong>
-    <ul>
-      <li><b style="background-color: initial;"></b>Uses easy to read fonts, colors and styles to make things easy on the eyes, also uses black where possible to save on battery life.&nbsp;</li>
-    </ul>
+ 
     <br>
+    <br>
+    <button id='returnbutton' onclick="goToLanding()" type="button" class="btn btn-secondary">Return</button>
     <br>
   </div>
 

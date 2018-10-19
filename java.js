@@ -1,18 +1,16 @@
-$("#splash").show()
+$("#splash").show();
 
 $("#opponentTurn").hide();
 $("#yourturn").hide();
 $("#accordion").hide();
 $("#Oaccordion").hide();
 $("#settings").hide();
-$("#landing").hide()
-$("#aboutThisApp").hide()
+$("#landing").hide();
+$("#aboutThisApp").hide();
 
-
-setTimeout(function(){ 
-$("#landing").show()
-$("#splash").hide()
-
+setTimeout(function() {
+  $("#landing").show();
+  $("#splash").hide();
 }, 2000);
 
 function hideLanding() {
@@ -31,18 +29,23 @@ function OhideLanding() {
 
 function showSettings() {
   $("#settings").show();
-  $("body").css("background", "#222222");
+
 }
 
 function aboutThisApp() {
-  $("#aboutThisApp").show()
-  $("body").css("background", "#222222");
+  $("#aboutThisApp").show();
+
   $("#opponentTurn").hide();
-$("#yourturn").hide();
-$("#accordion").hide();
-$("#Oaccordion").hide();
-$("#settings").hide();
-$("#landing").hide()
+  $("#yourturn").hide();
+  $("#accordion").hide();
+  $("#Oaccordion").hide();
+  $("#settings").hide();
+  $("#landing").hide();
+}
+
+function goToLanding() {
+  $("#landing").show();
+  $("#aboutThisApp").hide();
 
 }
 
@@ -922,8 +925,12 @@ $("#OmoraleInput").keyup(function(event) {
 // disable back button, hopefully ----------------------------------------------------------------------
 
 document.addEventListener("deviceready", onDeviceReady, false);
-    function onDeviceReady() {
-        document.addEventListener("backbutton", function (e) {
-            e.preventDefault();
-        }, false );
+function onDeviceReady() {
+  document.addEventListener(
+    "backbutton",
+    function(e) {
+      e.preventDefault();
+    },
+    false
+  );
 }

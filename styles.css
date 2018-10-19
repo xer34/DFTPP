@@ -6,6 +6,14 @@ body {
   background-size: 100vw 100vh;
 }
 
+#splash {
+  width:  100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 #yourturn {
   position: fixed;
 }
@@ -101,7 +109,7 @@ body {
   font-size: 16px;
   margin: auto;
   width: 50%;
-  top: 70%;
+  top: 65%;
   left: 25%;
 }
 
@@ -116,7 +124,7 @@ body {
   font-size: 16px;
   margin: auto;
   width: 50%;
-  top: 80%;
+  top: 75%;
   left: 25%;
 }
 
@@ -124,14 +132,26 @@ body {
   position: fixed;
   border: none;
   color: white;
-  padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
   margin: auto;
   width: 40%;
-  top: 90%;
+  height: 35px;
+  top: 85%;
+  left: 30%;
+}
+#support {
+  position: fixed;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: auto;
+  width: 40%;
+  height: 35px;
+  top: 92%;
   left: 30%;
 }
 

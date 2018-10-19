@@ -1,9 +1,19 @@
+$("#splash").show()
 
 $("#opponentTurn").hide();
 $("#yourturn").hide();
 $("#accordion").hide();
 $("#Oaccordion").hide();
 $("#settings").hide();
+$("#landing").hide()
+$("#aboutThisApp").hide()
+
+
+setTimeout(function(){ 
+$("#landing").show()
+$("#splash").hide()
+
+}, 2000);
 
 function hideLanding() {
   $("#landing").hide();
@@ -21,6 +31,19 @@ function OhideLanding() {
 
 function showSettings() {
   $("#settings").show();
+  $("body").css("background", "#222222");
+}
+
+function aboutThisApp() {
+  $("#aboutThisApp").show()
+  $("body").css("background", "#222222");
+  $("#opponentTurn").hide();
+$("#yourturn").hide();
+$("#accordion").hide();
+$("#Oaccordion").hide();
+$("#settings").hide();
+$("#landing").hide()
+
 }
 
 // ACCORDIAN ----------------------------------------------------------------------
@@ -178,6 +201,12 @@ list.addEventListener(
   false
 );
 
+$("#preGameInput").keyup(function(event) {
+  if (event.keyCode === 13) {
+    $(".preGameInput").click();
+  }
+});
+
 // Create a new list item when clicking on the "Add" button
 function newElement() {
   var li = document.createElement("li");
@@ -243,6 +272,13 @@ function moveElement() {
     };
   }
 }
+
+$("#movementInput").keyup(function(event) {
+  if (event.keyCode === 13) {
+    $(".movementInput").click();
+  }
+});
+
 // psychicInput ----------------------------------------------------------------
 
 var list = document.querySelector("#psyUL");
@@ -281,6 +317,13 @@ function newPsychicElement() {
     };
   }
 }
+
+$("#psychicInput").keyup(function(event) {
+  if (event.keyCode === 13) {
+    $(".psychicInput").click();
+  }
+});
+
 // shooting --------------------------------------------------------------------
 
 var list = document.querySelector("#shootUL");
@@ -320,6 +363,12 @@ function shootElement() {
   }
 }
 
+$("#shootInput").keyup(function(event) {
+  if (event.keyCode === 13) {
+    $(".shootInput").click();
+  }
+});
+
 // charge ----------------------------------------------------------------------
 
 var list = document.querySelector("#chargeUL");
@@ -358,6 +407,13 @@ function chargeElement() {
     };
   }
 }
+
+$("#chargeInput").keyup(function(event) {
+  if (event.keyCode === 13) {
+    $(".chargeInput").click();
+  }
+});
+
 // fight ----------------------------------------------------------------------
 
 var list = document.querySelector("#fightUL");
@@ -396,6 +452,13 @@ function fightElement() {
     };
   }
 }
+
+$("#fightInput").keyup(function(event) {
+  if (event.keyCode === 13) {
+    $(".fightInput").click();
+  }
+});
+
 // morale ----------------------------------------------------------------------
 
 var list = document.querySelector("#moraleUL");
@@ -434,7 +497,11 @@ function moraleElement() {
     };
   }
 }
-
+$("#moraleInput").keyup(function(event) {
+  if (event.keyCode === 13) {
+    $(".moraleInput").click();
+  }
+});
 //  counters ---------------------------------
 
 $(".vpCounter").click(function(e) {
@@ -587,6 +654,11 @@ function OnewElement() {
     };
   }
 }
+$("#OpreGameInput").keyup(function(event) {
+  if (event.keyCode === 13) {
+    $(".OpreGameInput").click();
+  }
+});
 
 // opponent movement---------------------------------------------------------------------
 
@@ -627,6 +699,11 @@ function OmoveElement() {
     };
   }
 }
+$("#OmovementInput").keyup(function(event) {
+  if (event.keyCode === 13) {
+    $(".OmovementInput").click();
+  }
+});
 // opponent psychicInput ----------------------------------------------------------------
 
 var list = document.querySelector("#OpsyUL");
@@ -665,6 +742,11 @@ function OnewPsychicElement() {
     };
   }
 }
+$("#OpsychicInput").keyup(function(event) {
+  if (event.keyCode === 13) {
+    $(".OpsychicInput").click();
+  }
+});
 // opponent shooting --------------------------------------------------------------------
 
 var list = document.querySelector("#OshootUL");
@@ -703,7 +785,11 @@ function OshootElement() {
     };
   }
 }
-
+$("#OshootInput").keyup(function(event) {
+  if (event.keyCode === 13) {
+    $(".OshootInput").click();
+  }
+});
 // opponent charge ----------------------------------------------------------------------
 
 var list = document.querySelector("#OchargeUL");
@@ -742,6 +828,11 @@ function OchargeElement() {
     };
   }
 }
+$("#OchargeInput").keyup(function(event) {
+  if (event.keyCode === 13) {
+    $(".OchargeInput").click();
+  }
+});
 // opponent fight ----------------------------------------------------------------------
 
 var list = document.querySelector("#OfightUL");
@@ -780,6 +871,11 @@ function OfightElement() {
     };
   }
 }
+$("#OfightInput").keyup(function(event) {
+  if (event.keyCode === 13) {
+    $(".OfightInput").click();
+  }
+});
 // opponent morale ----------------------------------------------------------------------
 
 var list = document.querySelector("#OmoraleUL");
@@ -818,4 +914,16 @@ function OmoraleElement() {
     };
   }
 }
+$("#OmoraleInput").keyup(function(event) {
+  if (event.keyCode === 13) {
+    $(".OmoraleInput").click();
+  }
+});
+// disable back button, hopefully ----------------------------------------------------------------------
 
+document.addEventListener("deviceready", onDeviceReady, false);
+    function onDeviceReady() {
+        document.addEventListener("backbutton", function (e) {
+            e.preventDefault();
+        }, false );
+}

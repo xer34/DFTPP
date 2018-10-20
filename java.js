@@ -71,7 +71,7 @@ $(".accordion").click(function() {
 // TIMER ----------------------------------------------------------------------
 var chessClock;
 var timerOn = false;
-var time = 5400;
+var time = 4500;
 var customTime = false;
 
 function setGameTime() {
@@ -132,7 +132,7 @@ $("#pause").click(function() {
 // OPPONENT TIMER ----------------------------------------------------------------------
 var OchessClock;
 var OtimerOn = false;
-var Otime = 5400;
+var Otime = 4500;
 
 $("#OstartTimer").click(function() {
   clearInterval(OchessClock);

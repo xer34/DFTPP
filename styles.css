@@ -6,10 +6,27 @@ body {
   background-size: 100vw 100vh;
 }
 
+#endTurn {
+  width: 33.3%;
+}
+#overwatch {
+  width: 33.3%;
+}
+#endGame {
+  width: 33.3%;
+}
+#OendTurn {
+  width: 33.3%;
+}
+#Ooverwatch {
+  width: 33.3%;
+}
+#OendGame {
+  width: 33.3%;
+}
 #endGameDiv {
   text-align: center;
 }
-
 #goBackButton {
   position: fixed;
   border: none;
@@ -24,8 +41,6 @@ body {
   top: 30%;
   left: 25%;
 }
-
-
 #OgoBackButton {
   position: fixed;
   border: none;
@@ -40,49 +55,39 @@ body {
   top: 30%;
   left: 25%;
 }
-
-
 #splash {
-  width:  100vw;
+  width: 100vw;
   height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-
 #yourturn {
   position: fixed;
 }
-
 #accordion {
   position: absolute;
   top: 30%;
 }
-
 #opponentTurn {
   position: fixed;
 }
-
 #Oaccordion {
   position: absolute;
   top: 30%;
 }
-
 #landing {
   height: 100%;
   color: white;
   font-size: 40px;
   text-align: center;
 }
-
 #pauseDiv {
   background: #222222;
 }
-
 #resetDiv {
   background: #222222;
 }
-
 #pause {
   position: fixed;
   top: 3%;
@@ -98,24 +103,20 @@ body {
   top: 3%;
   right: 7%;
 }
-
 #Opause {
   position: fixed;
   top: 3%;
   left: 7%;
 }
-
 #Oreset {
   position: fixed;
   top: 3%;
   right: 7%;
 }
-
 #counterDiv {
   background: #222222;
   color: white;
 }
-
 #timerDiv {
   background: #222222;
   height: 80px;
@@ -124,7 +125,6 @@ body {
   color: white;
   cursor: pointer;
 }
-
 #OtimerDiv {
   background: #222222;
   height: 80px;
@@ -133,7 +133,6 @@ body {
   color: white;
   cursor: pointer;
 }
-
 #startButton {
   position: fixed;
   border: none;
@@ -148,7 +147,6 @@ body {
   top: 65%;
   left: 25%;
 }
-
 #OstartButton {
   position: fixed;
   border: none;
@@ -163,7 +161,6 @@ body {
   top: 75%;
   left: 25%;
 }
-
 #showSettingsButton {
   position: fixed;
   border: none;
@@ -190,9 +187,7 @@ body {
   top: 92%;
   left: 30%;
 }
-
 #returnbutton {
-
   border: none;
   color: white;
   text-align: center;
@@ -201,9 +196,7 @@ body {
   margin: auto;
   width: 40%;
   height: 35px;
-
 }
-
 ol {
   color: white;
   font-size: 14px;
@@ -211,45 +204,35 @@ ol {
   margin: 0;
   padding: 0.2em 25%;
 }
-
 #button:hover {
   cursor: pointer;
   opacity: 0.8;
 }
-
 button.pregame {
   background-color: #9a9c00;
 }
-
 button.movement {
   background-color: #9a4b4b;
 }
-
 button.psychic {
   background-color: #974b9a;
 }
-
 button.shooting {
   background-color: #584b9a;
 }
-
 button.charge {
   background-color: #4b959a;
 }
-
 button.fight {
   background-color: #4e9a4b;
 }
-
 button.morale {
   background-color: #9a874b;
 }
-
 .phaseRow {
   color: white;
   height: 57px;
 }
-
 button.accordion {
   cursor: pointer;
   width: 100%;
@@ -262,19 +245,16 @@ button.accordion {
   margin: ".5px 0";
   border-bottom: none;
 }
-
 button.accordion.active,
 button.accordion:hover {
   color: white;
 }
-
 button.accordion:before {
   font-size: 9px;
   float: left;
   margin: ".5px 0";
   border-bottom: none;
 }
-
 div.panel {
   background-color: grey;
   max-height: 0;
@@ -286,11 +266,9 @@ div.panel {
   opacity: 0;
   border-bottom: none;
 }
-
 .panel-icon {
   margin-right: 10px;
 }
-
 .panel h5 {
   font-size: 15px;
   line-height: 23px;
@@ -299,41 +277,31 @@ div.panel {
   display: inline-block;
   color: #2d2d2d;
 }
-
 .panel p {
   font-size: 15px;
   line-height: 23px;
   padding: 15px 30px 20px 0;
   color: whitesmoke;
 }
-
 div.panel.show {
   opacity: 1;
   max-height: 500px;
   margin: ".5px 0";
 }
-
 #aboutText {
   font-size: 14px;
 }
-
 /* ----------------------------------------------------- */
-
 /* Include the padding and border in an element's total width and height */
-
 * {
   box-sizing: border-box;
 }
-
 /* Remove margins and padding from the list */
-
 ul {
   margin: 0;
   padding: 0;
 }
-
 /* Style the list items */
-
 ul li {
   cursor: pointer;
   position: relative;
@@ -348,29 +316,21 @@ ul li {
   -ms-user-select: none;
   user-select: none;
 }
-
 /* Set all odd list items to a different color (zebra-stripes) */
-
 ul li:nth-child(odd) {
   background: #494949;
 }
-
 /* Darker background-color on hover */
-
 ul li:hover {
   background: rgb(37, 37, 37);
 }
-
 /* When clicked on, add a background color and strike out text */
-
 ul li.checked {
   background: #888;
   color: rgb(0, 0, 0);
   text-decoration: line-through;
 }
-
 /* Add a "checked" mark when clicked on */
-
 ul li.checked::before {
   content: "";
   position: absolute;
@@ -383,40 +343,31 @@ ul li.checked::before {
   height: 15px;
   width: 7px;
 }
-
 /* Style the close button */
-
 .close {
   position: absolute;
   right: 0;
   top: 0;
   padding: 12px 16px 12px 16px;
 }
-
 .close:hover {
   background-color: grey;
   color: white;
 }
-
 /* Style the header */
-
 .header {
   background-color: grey;
   padding: 0 20% 0 20%;
   color: white;
   text-align: center;
 }
-
 /* Clear floats after the header */
-
 .header:after {
   content: "";
   display: table;
   clear: both;
 }
-
 /* Style the input */
-
 input {
   margin: 0;
   border: none;
@@ -426,9 +377,7 @@ input {
   float: left;
   font-size: 16px;
 }
-
 /* Style the "Add" button */
-
 .addBtn {
   padding: 10px;
   width: 25%;
@@ -441,17 +390,13 @@ input {
   transition: 0.3s;
   border-radius: 0;
 }
-
 .addBtn:hover {
   background-color: #bbb;
 }
-
 /* plus and minus button styling  ------------------------  */
-
 .cpCounter {
   width: 45px;
   height: 45px;
-
   border-radius: 0px !important;
   text-align: center;
 }
@@ -464,7 +409,6 @@ input {
 .OcpCounter {
   width: 45px;
   height: 45px;
-
   border-radius: 0px !important;
   text-align: center;
 }
@@ -474,21 +418,18 @@ input {
   border-radius: 0px !important;
   text-align: center;
 }
-
 #vp {
   position: fixed;
   top: 19%;
   right: 6%;
   font-weight: bold;
 }
-
 #cp {
   position: fixed;
   top: 19%;
   left: 6%;
   font-weight: bold;
 }
-
 #VPPlus {
   position: fixed;
   top: 10%;
@@ -500,20 +441,17 @@ input {
   top: 10%;
   left: 15%;
 }
-
 #VPMinus {
   position: fixed;
   top: 17%;
   right: 15%;
   height: 45px;
 }
-
 #CPMinus {
   position: fixed;
   top: 17%;
   left: 15%;
 }
-
 #vpNumBox {
   position: fixed;
   top: 12%;
@@ -524,9 +462,7 @@ input {
   top: 12%;
   left: 2%;
 }
-
 /* ------------------SETTINGS PAGE STUFF---------------------------------- */
-
 /* dont waste your time or time will waste you */
 #timeHHMM {
   height: 45px;

@@ -971,25 +971,23 @@ function onDeviceReady() {
 // end game button
 
 function endGame() {
-  $("#goBack").hide();
-  $("#OgoBack").hide();
-  $("#opponentTurn").hide();
-  $("#yourturn").hide();
-  $("#accordion").hide();
-  $("#Oaccordion").hide();
-  $("#settings").hide();
-  $("#landing").hide();
-  $("#aboutThisApp").hide();
-
   if (confirm("Are you sure you want to end the game?") === true) {
     $("#endGameDiv").show();
+    $("#goBack").hide();
+    $("#OgoBack").hide();
+    $("#opponentTurn").hide();
+    $("#yourturn").hide();
+    $("#accordion").hide();
+    $("#Oaccordion").hide();
+    $("#settings").hide();
+    $("#landing").hide();
+    $("#aboutThisApp").hide();
     if ($("#player1VP").text() > $("#player2VP").text()) {
       $("#winningPlayer").text("You Win!");
     }
     if ($("#player1VP").text() == $("#player2VP").text()) {
       $("#winningPlayer").text("Round Draw");
-    }
-      else {
+    } else {
       $("#winningPlayer").text("You Lose!");
     }
   }

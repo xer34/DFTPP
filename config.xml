@@ -4,8 +4,8 @@
     <description>
         Don't Forget The Psychic Phase.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="TheMasterApothecary@gmailcom" href="www.patreon.com/xer34">
+        Grand Master Apothecary Bene
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
@@ -26,7 +26,7 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
- <preference name="SplashScreenDelay" value="2" />
+
     
 <widget xmlns="http://www.w3.org/ns/widgets">
 <style type="text/css" id="night-mode-pro-style"/>

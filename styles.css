@@ -6,6 +6,42 @@ body {
   background-size: 100vw 100vh;
 }
 
+#endGameDiv {
+  text-align: center;
+}
+
+#goBackButton {
+  position: fixed;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+  width: 50%;
+  top: 30%;
+  left: 25%;
+}
+
+
+#OgoBackButton {
+  position: fixed;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+  width: 50%;
+  top: 30%;
+  left: 25%;
+}
+
+
 #splash {
   width:  100vw;
   height: 100vh;

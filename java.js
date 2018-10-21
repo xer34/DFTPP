@@ -1,5 +1,8 @@
 $("#splash").show();
 
+$("#endGameDiv").hide();
+$("#goBack").hide();
+$("#OgoBack").hide();
 $("#opponentTurn").hide();
 $("#yourturn").hide();
 $("#accordion").hide();
@@ -11,7 +14,7 @@ $("#aboutThisApp").hide();
 setTimeout(function() {
   $("#landing").show();
   $("#splash").hide();
-}, 2000);
+}, 1500);
 
 function hideLanding() {
   $("#landing").hide();
@@ -29,7 +32,6 @@ function OhideLanding() {
 
 function showSettings() {
   $("#settings").show();
-
 }
 
 function aboutThisApp() {
@@ -46,7 +48,6 @@ function aboutThisApp() {
 function goToLanding() {
   $("#landing").show();
   $("#aboutThisApp").hide();
-
 }
 
 // ACCORDIAN ----------------------------------------------------------------------
@@ -115,14 +116,6 @@ $("#startTimer").click(function() {
     }
   }, 1000);
 });
-
-// $("#reset").click(function() {
-//   clearInterval(chessClock);
-//   time = 5400;
-//   span = document.getElementById("timerCount");
-//   span.innerHTML = "90:00";
-//   console.log("Reset");
-// });
 
 $("#pause").click(function() {
   console.log("Stopping");
@@ -518,6 +511,7 @@ $(".vpCounter").click(function(e) {
   }
   value = value < 0 ? 0 : value;
   $(".vpCounter").val(value);
+  $("#player1VP").text(value);
 });
 $(".vpCounter").click(function() {
   $(this)
@@ -577,6 +571,44 @@ $("#Oendturn").click(function() {
   }
 });
 
+// OVERWATCH button ------------------------------------------------
+
+$("#overwatch").click(function() {
+  $("#yourturn").hide();
+  $("#accordion").hide();
+  $("#opponentTurn").show();
+  clearInterval(chessClock);
+  console.log("stopping");
+  $("#goBack").show();
+});
+
+$("#goBack").click(function() {
+  $("#yourturn").show();
+  $("#accordion").show();
+  $("#opponentTurn").hide();
+  clearInterval(OchessClock);
+  console.log("stopping");
+  $("#goBack").hide();
+});
+
+$("#Ooverwatch").click(function() {
+  $("#yourturn").show();
+  $("#opponentTurn").hide();
+  $("#Oaccordion").hide();
+  clearInterval(OchessClock);
+  console.log("Ostopping");
+  $("#OgoBack").show();
+});
+
+$("#OgoBack").click(function() {
+  $("#yourturn").hide();
+  $("#opponentTurn").show();
+  $("#Oaccordion").show();
+  clearInterval(chessClock);
+  console.log("stopping");
+  $("#OgoBack").hide();
+});
+
 //  OPPONENT counters ---------------------------------
 
 $(".OvpCounter").click(function(e) {
@@ -590,6 +622,7 @@ $(".OvpCounter").click(function(e) {
   }
   value = value < 0 ? 0 : value;
   $(".OvpCounter").val(value);
+  $("#player2VP").text(value);
 });
 $(".OvpCounter").click(function() {
   $(this)
@@ -934,3 +967,34 @@ function onDeviceReady() {
     false
   );
 }
+
+// end game button
+
+function endGame() {
+  $("#goBack").hide();
+  $("#OgoBack").hide();
+  $("#opponentTurn").hide();
+  $("#yourturn").hide();
+  $("#accordion").hide();
+  $("#Oaccordion").hide();
+  $("#settings").hide();
+  $("#landing").hide();
+  $("#aboutThisApp").hide();
+
+  if (confirm("Are you sure you want to end the game?") === true) {
+    $("#endGameDiv").show();
+    if ($("#player1VP").text() > $("#player2VP").text()) {
+      $("#winningPlayer").text("You Win!");
+    }
+    if ($("#player1VP").text() == $("#player2VP").text()) {
+      $("#winningPlayer").text("Round Draw");
+    }
+      else {
+      $("#winningPlayer").text("You Lose!");
+    }
+  }
+}
+
+$("#resetGameButton").click(function() {
+  location.reload();
+});

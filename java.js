@@ -12,42 +12,42 @@ $("#landing").hide();
 $("#aboutThisApp").hide();
 
 setTimeout(function() {
-  $("#landing").show();
-  $("#splash").hide();
+  $("#landing").fadeIn();
+  $("#splash").fadeOut();
 }, 1500);
 
 function hideLanding() {
-  $("#landing").hide();
-  $("#yourturn").show();
-  $("#accordion").show();
+  $("#landing").fadeOut();
+  $("#yourturn").fadeIn();
+  $("#accordion").fadeIn();
   $("body").css("background", "#222222");
 }
 
 function OhideLanding() {
-  $("#landing").hide();
-  $("#opponentTurn").show();
-  $("#Oaccordion").show();
+  $("#landing").fadeOut();
+  $("#opponentTurn").fadeIn();
+  $("#Oaccordion").fadeIn();
   $("body").css("background", "#222222");
 }
 
 function showSettings() {
-  $("#settings").show();
+  $("#settings").fadeIn();
 }
 
 function aboutThisApp() {
-  $("#aboutThisApp").show();
+  $("#aboutThisApp").fadeIn();
 
-  $("#opponentTurn").hide();
-  $("#yourturn").hide();
-  $("#accordion").hide();
-  $("#Oaccordion").hide();
-  $("#settings").hide();
-  $("#landing").hide();
+  $("#opponentTurn").fadeOut();
+  $("#yourturn").fadeOut();
+  $("#accordion").fadeOut();
+  $("#Oaccordion").fadeOut();
+  $("#settings").fadeOut();
+  $("#landing").fadeOut();
 }
 
 function goToLanding() {
-  $("#landing").show();
-  $("#aboutThisApp").hide();
+  $("#landing").fadeIn();
+  $("#aboutThisApp").fadeOut();
 }
 
 // ACCORDIAN ----------------------------------------------------------------------
@@ -90,7 +90,7 @@ function setGameTime() {
   span = document.getElementById("OtimerCount");
   span.innerHTML = Ominutes + ":" + Oseconds;
 
-  $("#settings").hide();
+  $("#settings").fadeOut();
   console.log(time);
   console.log(Otime);
 }
@@ -543,70 +543,70 @@ var count = 1;
 var OCount = 1;
 
 $("#endturn").click(function() {
-  $("#yourturn").hide();
-  $("#accordion").hide();
-  $("#opponentTurn").show();
-  $("#Oaccordion").show();
+  $("#yourturn").fadeOut();
+  $("#accordion").fadeOut();
+  $("#opponentTurn").fadeIn();
+  $("#Oaccordion").fadeIn();
   clearInterval(chessClock);
   console.log("stopping");
   count++;
   $("#turncounter").text(count);
   if (count > 1) {
-    $(".pregame").hide();
+    $(".pregame").fadeOut();
   }
 });
 
 $("#Oendturn").click(function() {
-  $("#opponentTurn").hide();
-  $("#Oaccordion").hide();
-  $("#yourturn").show();
-  $("#accordion").show();
+  $("#opponentTurn").fadeOut();
+  $("#Oaccordion").fadeOut();
+  $("#yourturn").fadeIn();
+  $("#accordion").fadeIn();
   clearInterval(OchessClock);
   console.log("stopping");
   OCount++;
   console.log("enemy turn " + OCount);
   $("#Oturncounter").text(OCount);
   if (OCount > 1) {
-    $(".pregame").hide();
+    $(".pregame").fadeOut();
   }
 });
 
 // OVERWATCH button ------------------------------------------------
 
 $("#overwatch").click(function() {
-  $("#yourturn").hide();
-  $("#accordion").hide();
-  $("#opponentTurn").show();
+  $("#yourturn").fadeOut();
+  $("#accordion").fadeOut();
+  $("#opponentTurn").fadeIn();
   clearInterval(chessClock);
   console.log("stopping");
-  $("#goBack").show();
+  $("#goBack").fadeIn();
 });
 
 $("#goBack").click(function() {
-  $("#yourturn").show();
-  $("#accordion").show();
-  $("#opponentTurn").hide();
+  $("#yourturn").fadeIn();
+  $("#accordion").fadeIn();
+  $("#opponentTurn").fadeOut();
   clearInterval(OchessClock);
   console.log("stopping");
-  $("#goBack").hide();
+  $("#goBack").fadeOut();
 });
 
 $("#Ooverwatch").click(function() {
-  $("#yourturn").show();
-  $("#opponentTurn").hide();
-  $("#Oaccordion").hide();
+  $("#yourturn").fadeIn();
+  $("#opponentTurn").fadeOut();
+  $("#Oaccordion").fadeOut();
   clearInterval(OchessClock);
   console.log("Ostopping");
-  $("#OgoBack").show();
+  $("#OgoBack").fadeIn();
 });
 
 $("#OgoBack").click(function() {
-  $("#yourturn").hide();
-  $("#opponentTurn").show();
-  $("#Oaccordion").show();
+  $("#yourturn").fadeOut();
+  $("#opponentTurn").fadeIn();
+  $("#Oaccordion").fadeIn();
   clearInterval(chessClock);
   console.log("stopping");
-  $("#OgoBack").hide();
+  $("#OgoBack").fadeOut();
 });
 
 //  OPPONENT counters ---------------------------------
@@ -972,16 +972,16 @@ function onDeviceReady() {
 
 function endGame() {
   if (confirm("Are you sure you want to end the game?") === true) {
-    $("#endGameDiv").show();
-    $("#goBack").hide();
-    $("#OgoBack").hide();
-    $("#opponentTurn").hide();
-    $("#yourturn").hide();
-    $("#accordion").hide();
-    $("#Oaccordion").hide();
-    $("#settings").hide();
-    $("#landing").hide();
-    $("#aboutThisApp").hide();
+    $("#endGameDiv").fadeIn();
+    $("#goBack").fadeOut()
+    $("#OgoBack").fadeOut()
+    $("#opponentTurn").fadeOut()
+    $("#yourturn").fadeOut()
+    $("#accordion").fadeOut()
+    $("#Oaccordion").fadeOut()
+    $("#settings").fadeOut()
+    $("#landing").fadeOut()
+    $("#aboutThisApp").fadeOut()
     if ($("#player1VP").text() > $("#player2VP").text()) {
       $("#winningPlayer").text("You Win!");
     }

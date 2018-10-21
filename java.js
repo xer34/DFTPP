@@ -985,7 +985,7 @@ function endGame() {
     if ($("#player1VP").text() > $("#player2VP").text()) {
       $("#winningPlayer").text("You Win!");
     }
-    if ($("#player1VP").text() == $("#player2VP").text()) {
+    else if ($("#player1VP").text() == $("#player2VP").text()) {
       $("#winningPlayer").text("Round Draw");
     } else {
       $("#winningPlayer").text("You Lose!");

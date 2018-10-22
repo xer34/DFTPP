@@ -10,6 +10,8 @@ $("#Oaccordion").hide();
 $("#settings").hide();
 $("#landing").hide();
 $("#aboutThisApp").hide();
+$("#returnToLandingButton").hide();
+$("#OreturnToLandingButton").hide();
 
 setTimeout(function() {
   $("#landing").fadeIn();
@@ -21,6 +23,9 @@ function hideLanding() {
   $("#yourturn").fadeIn();
   $("#accordion").fadeIn();
   $("body").css("background", "#222222");
+  $("#endturn").fadeIn();
+  $("#overwatch").fadeIn();
+  $("#endGame").fadeIn();
 }
 
 function OhideLanding() {
@@ -28,6 +33,9 @@ function OhideLanding() {
   $("#opponentTurn").fadeIn();
   $("#Oaccordion").fadeIn();
   $("body").css("background", "#222222");
+  $("#Oendturn").fadeIn();
+  $("#Ooverwatch").fadeIn();
+  $("#OendGame").fadeIn();
 }
 
 function showSettings() {
@@ -968,24 +976,77 @@ function onDeviceReady() {
   );
 }
 
-// end game button
+// edit list pregame ----------------------------------------------------------------------
+
+function editLists() {
+  $("#endGameDiv").hide();
+  $("#goBack").hide();
+  $("#OgoBack").hide();
+  $("#opponentTurn").hide();
+  $("#yourturn").hide();
+  $("#accordion").fadeIn();
+  $("#Oaccordion").hide();
+  $("#settings").hide();
+  $("#landing").hide();
+  $("#aboutThisApp").hide();
+
+  $("#endturn").hide();
+  $("#overwatch").hide();
+  $("#endGame").hide();
+
+  $("#returnToLandingButton").show()
+
+}
+
+
+$("#returnToLandingButton").click(function() {
+  $("#accordion").fadeOut();
+  $("#landing").fadeIn();
+  $("#returnToLandingButton").hide()
+});
+
+$("#OreturnToLandingButton").click(function() {
+  $("#Oaccordion").fadeOut();
+  $("#landing").fadeIn();
+  $("#OreturnToLandingButton").hide()
+});
+
+function OeditLists() {
+  $("#endGameDiv").hide();
+  $("#goBack").hide();
+  $("#OgoBack").hide();
+  $("#opponentTurn").hide();
+  $("#yourturn").hide();
+  $("#accordion").hide();
+  $("#Oaccordion").fadeIn();
+  $("#settings").hide();
+  $("#landing").hide();
+  $("#aboutThisApp").hide();
+
+  $("#Oendturn").hide();
+  $("#Ooverwatch").hide();
+  $("#OendGame").hide();
+
+  $("#OreturnToLandingButton").show()
+}
+
+// end game button -----------------------------------------
 
 function endGame() {
   if (confirm("Are you sure you want to end the game?") === true) {
     $("#endGameDiv").fadeIn();
-    $("#goBack").fadeOut()
-    $("#OgoBack").fadeOut()
-    $("#opponentTurn").fadeOut()
-    $("#yourturn").fadeOut()
-    $("#accordion").fadeOut()
-    $("#Oaccordion").fadeOut()
-    $("#settings").fadeOut()
-    $("#landing").fadeOut()
-    $("#aboutThisApp").fadeOut()
+    $("#goBack").fadeOut();
+    $("#OgoBack").fadeOut();
+    $("#opponentTurn").fadeOut();
+    $("#yourturn").fadeOut();
+    $("#accordion").fadeOut();
+    $("#Oaccordion").fadeOut();
+    $("#settings").fadeOut();
+    $("#landing").fadeOut();
+    $("#aboutThisApp").fadeOut();
     if ($("#player1VP").text() > $("#player2VP").text()) {
       $("#winningPlayer").text("You Win!");
-    }
-    else if ($("#player1VP").text() == $("#player2VP").text()) {
+    } else if ($("#player1VP").text() == $("#player2VP").text()) {
       $("#winningPlayer").text("Round Draw");
     } else {
       $("#winningPlayer").text("You Lose!");

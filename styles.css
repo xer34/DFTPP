@@ -55,6 +55,40 @@ body {
   top: 30%;
   left: 25%;
 }
+
+#returnToLandingButton {
+  position: fixed;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+  width: 50%;
+  top: 10%;
+  left: 25%;
+}
+
+#OreturnToLandingButton {
+  position: fixed;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+  width: 50%;
+  top: 10%;
+  left: 25%;
+}
+
+
+
+
 #splash {
   width: 100vw;
   height: 100vh;

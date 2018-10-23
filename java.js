@@ -26,6 +26,7 @@ function hideLanding() {
   $("#endturn").fadeIn();
   $("#overwatch").fadeIn();
   $("#endGame").fadeIn();
+  $("#settings").fadeOut();
 }
 
 function OhideLanding() {
@@ -36,6 +37,7 @@ function OhideLanding() {
   $("#Oendturn").fadeIn();
   $("#Ooverwatch").fadeIn();
   $("#OendGame").fadeIn();
+  $("#settings").fadeOut();
 }
 
 function showSettings() {
@@ -1046,6 +1048,7 @@ function endGame() {
   }
 }
 
+// buttons for resetting game state
 $("#keepCurrent").click(function() {
   $("#endGameDiv").fadeOut();
   $("#landing").fadeIn();

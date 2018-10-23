@@ -157,14 +157,6 @@ $("#OstartTimer").click(function() {
   }, 1000);
 });
 
-// $("#Oreset").click(function() {
-//   clearInterval(OchessClock);
-//   Otime = 5400;
-//   span = document.getElementById("OtimerCount");
-//   span.innerHTML = "90:00";
-//   console.log("Opponet Reset");
-// });
-
 $("#Opause").click(function() {
   console.log("Opponent Stopping");
   clearInterval(OchessClock);
@@ -994,21 +986,19 @@ function editLists() {
   $("#overwatch").hide();
   $("#endGame").hide();
 
-  $("#returnToLandingButton").show()
-
+  $("#returnToLandingButton").show();
 }
-
 
 $("#returnToLandingButton").click(function() {
   $("#accordion").fadeOut();
   $("#landing").fadeIn();
-  $("#returnToLandingButton").hide()
+  $("#returnToLandingButton").hide();
 });
 
 $("#OreturnToLandingButton").click(function() {
   $("#Oaccordion").fadeOut();
   $("#landing").fadeIn();
-  $("#OreturnToLandingButton").hide()
+  $("#OreturnToLandingButton").hide();
 });
 
 function OeditLists() {
@@ -1027,13 +1017,15 @@ function OeditLists() {
   $("#Ooverwatch").hide();
   $("#OendGame").hide();
 
-  $("#OreturnToLandingButton").show()
+  $("#OreturnToLandingButton").show();
 }
 
 // end game button -----------------------------------------
 
 function endGame() {
   if (confirm("Are you sure you want to end the game?") === true) {
+    clearInterval(chessClock);
+    clearInterval(OchessClock);
     $("#endGameDiv").fadeIn();
     $("#goBack").fadeOut();
     $("#OgoBack").fadeOut();
@@ -1054,6 +1046,51 @@ function endGame() {
   }
 }
 
+$("#keepCurrent").click(function() {
+  $("#endGameDiv").fadeOut();
+  $("#landing").fadeIn();
+
+  var count = 1;
+  var OCount = 1;
+  $("#turncounter").text(count);
+  $("#Oturncounter").text(OCount);
+
+  $(".OvpCounter").val(0);
+  $(".OcpCounter").val(0);
+
+  $(".vpCounter").val(0);
+  $(".cpCounter").val(0);
+
+  var newTime = prompt(
+    "Please enter new total game round length in minutes",
+    "150"
+  );
+  var newestTime = parseInt(newTime);
+
+  if (newTime != null) {
+    time = (newestTime * 60) / 2;
+    Otime = (newestTime * 60) / 2;
+
+    var minutes = ~~(time / 60);
+    var seconds = time - minutes * 60;
+    span = document.getElementById("timerCount");
+    span.innerHTML = minutes + ":" + seconds;
+
+    var Ominutes = ~~(Otime / 60);
+    var Oseconds = Otime - Ominutes * 60;
+    span = document.getElementById("OtimerCount");
+    span.innerHTML = Ominutes + ":" + Oseconds;
+  }
+
+  $("#settings").fadeOut();
+  console.log(time);
+  console.log(Otime);
+});
+
 $("#resetGameButton").click(function() {
-  location.reload();
+  if (
+    confirm("Resetting will clear all data, do you want to proceed?") === true
+  ) {
+    location.reload();
+  }
 });

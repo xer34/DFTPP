@@ -1,3 +1,18 @@
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBBocEFG1hxeBFkDwZP587L1APyZino7Ec",
+    authDomain: "battletimer-24bb3.firebaseapp.com",
+    databaseURL: "https://battletimer-24bb3.firebaseio.com",
+    projectId: "battletimer-24bb3",
+    storageBucket: "battletimer-24bb3.appspot.com",
+    messagingSenderId: "957130983331"
+  };
+  firebase.initializeApp(config);
+  
+  const database = firebase.database()
+
+
+
 $("#splash").show();
 
 $("#endGameDiv").hide();
@@ -108,14 +123,18 @@ function setGameTime() {
   $("#settings").hide();
   console.log(time);
   console.log(Otime);
+  database.ref().push(time);
+  database.ref().push(Otime);
 }
 
 $("#startTimer").click(function() {
+  database.ref().push(time);
   clearInterval(chessClock);
   timerOn = true;
   chessClock = setInterval(function() {
     time--;
     console.log(time);
+    
     if (time >= 0) {
       var minutes = ~~(time / 60);
       var seconds = time - minutes * 60;
@@ -135,6 +154,7 @@ $("#startTimer").click(function() {
 $("#pause").click(function() {
   console.log("Stopping");
   clearInterval(chessClock);
+  database.ref().push(time);
 });
 
 // OPPONENT TIMER ----------------------------------------------------------------------
@@ -1095,7 +1115,7 @@ $("#keepCurrent").click(function() {
   console.log(Otime);
 
   $("body").css({
-    "background-image": 'url("pic.jpg")',
+    "background-image": 'url("./img/pic.jpg")',
     "background-repeat": "no-repeat",
     "background-color": "black",
     "background-size": "100vw 100vh"
@@ -1109,3 +1129,5 @@ $("#resetGameButton").click(function() {
     location.reload();
   }
 });
+
+

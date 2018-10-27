@@ -6,5 +6,29 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "cordova-plugin-firebase": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-firebase@^2.0.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "org.apache.cordova.geolocation": {
+    "source": {
+      "type": "registry",
+      "id": "org.apache.cordova.geolocation@~0.3.6"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "com.verso.cordova.clipboard": {
+    "source": {
+      "type": "registry",
+      "id": "com.verso.cordova.clipboard@~0.1.0"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

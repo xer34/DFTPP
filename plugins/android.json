@@ -9,6 +9,15 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.battletimer.dftpp"
+    },
+    "cordova-plugin-firebase": {
+      "PACKAGE_NAME": "com.battletimer.dftpp"
+    },
+    "org.apache.cordova.geolocation": {
+      "PACKAGE_NAME": "com.battletimer.dftpp"
+    },
+    "com.verso.cordova.clipboard": {
+      "PACKAGE_NAME": "com.battletimer.dftpp"
     }
   },
   "dependent_plugins": {}

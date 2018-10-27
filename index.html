@@ -44,6 +44,10 @@
 
   <div id='landing'>
     <img src="logo.png">
+   
+   
+    </div>
+    
     <button id='startButton' onclick="hideLanding()" type="button" class="btn btn-secondary">Your
       First Turn</button>
 
@@ -287,14 +291,8 @@
   <div class="container-fluid" id='settings'>
 
     <form>
-      <div class="form-group">
-        <label for="timeHHMM">Game Round Length</label>
-        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-          maxlength="4" class="form-control" id="timeMMMM" placeholder="Enter TOTAL Game Length in Minutes">
-
-      </div>
-      <br><br>
-      <button type="button" onclick='setGameTime()' class="btn btn-dark">Submit</button>
+    <p>You can edit the game length time here. Please enter <strong>total</strong> game length in minutes.</p>
+      <button type="button" onclick='setGameTime()' class="btn btn-dark">Set Time</button>
     </form><br>
     <p>Edit yours or your opponents checklists before the game:</p>
     <button id='editLists' onclick='editLists()' type="button" class="btn btn-danger">Edit Your List</button>

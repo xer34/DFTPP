@@ -86,9 +86,14 @@ var time = 4500;
 var customTime = false;
 
 function setGameTime() {
+  var userTime = prompt(
+    "Please enter new total game round length in minutes",
+    "150"
+  );
+
   customTime = true;
-  time = ($("#timeMMMM").val() * 60) / 2;
-  Otime = ($("#timeMMMM").val() * 60) / 2;
+  time = (parseInt(userTime) * 60) / 2;
+  Otime = (parseInt(userTime) * 60) / 2;
 
   var minutes = ~~(time / 60);
   var seconds = time - minutes * 60;
@@ -1088,6 +1093,13 @@ $("#keepCurrent").click(function() {
   $("#settings").fadeOut();
   console.log(time);
   console.log(Otime);
+
+  $("body").css({
+    "background-image": 'url("pic.jpg")',
+    "background-repeat": "no-repeat",
+    "background-color": "black",
+    "background-size": "100vw 100vh"
+  });
 });
 
 $("#resetGameButton").click(function() {

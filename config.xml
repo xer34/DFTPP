@@ -12,7 +12,7 @@
     <preference name="android-minSdkVersion" value="19" />
     <preference name="android-targetSdkVersion" value="26" />
     <access origin="*" />
-    <plugin name="cordova-plugin-firebase" spec="^2.0.0" />
+    <!-- <plugin name="cordova-plugin-firebase" spec="^2.0.0" /> -->
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />

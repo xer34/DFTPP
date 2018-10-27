@@ -15,29 +15,29 @@ $("#OreturnToLandingButton").hide();
 
 setTimeout(function() {
   $("#landing").fadeIn();
-  $("#splash").fadeOut();
+  $("#splash").hide();
 }, 1500);
 
 function hideLanding() {
-  $("#landing").fadeOut();
+  $("#landing").hide();
   $("#yourturn").fadeIn();
   $("#accordion").fadeIn();
   $("body").css("background", "#222222");
   $("#endturn").fadeIn();
   $("#overwatch").fadeIn();
   $("#endGame").fadeIn();
-  $("#settings").fadeOut();
+  $("#settings").hide();
 }
 
 function OhideLanding() {
-  $("#landing").fadeOut();
+  $("#landing").hide();
   $("#opponentTurn").fadeIn();
   $("#Oaccordion").fadeIn();
   $("body").css("background", "#222222");
   $("#Oendturn").fadeIn();
   $("#Ooverwatch").fadeIn();
   $("#OendGame").fadeIn();
-  $("#settings").fadeOut();
+  $("#settings").hide();
 }
 
 function showSettings() {
@@ -47,17 +47,17 @@ function showSettings() {
 function aboutThisApp() {
   $("#aboutThisApp").fadeIn();
 
-  $("#opponentTurn").fadeOut();
-  $("#yourturn").fadeOut();
-  $("#accordion").fadeOut();
-  $("#Oaccordion").fadeOut();
-  $("#settings").fadeOut();
-  $("#landing").fadeOut();
+  $("#opponentTurn").hide();
+  $("#yourturn").hide();
+  $("#accordion").hide();
+  $("#Oaccordion").hide();
+  $("#settings").hide();
+  $("#landing").hide();
 }
 
 function goToLanding() {
   $("#landing").fadeIn();
-  $("#aboutThisApp").fadeOut();
+  $("#aboutThisApp").hide();
 }
 
 // ACCORDIAN ----------------------------------------------------------------------
@@ -105,7 +105,7 @@ function setGameTime() {
   span = document.getElementById("OtimerCount");
   span.innerHTML = Ominutes + ":" + Oseconds;
 
-  $("#settings").fadeOut();
+  $("#settings").hide();
   console.log(time);
   console.log(Otime);
 }
@@ -550,8 +550,8 @@ var count = 1;
 var OCount = 1;
 
 $("#endturn").click(function() {
-  $("#yourturn").fadeOut();
-  $("#accordion").fadeOut();
+  $("#yourturn").hide();
+  $("#accordion").hide();
   $("#opponentTurn").fadeIn();
   $("#Oaccordion").fadeIn();
   clearInterval(chessClock);
@@ -559,13 +559,13 @@ $("#endturn").click(function() {
   count++;
   $("#turncounter").text(count);
   if (count > 1) {
-    $(".pregame").fadeOut();
+    $(".pregame").hide();
   }
 });
 
 $("#Oendturn").click(function() {
-  $("#opponentTurn").fadeOut();
-  $("#Oaccordion").fadeOut();
+  $("#opponentTurn").hide();
+  $("#Oaccordion").hide();
   $("#yourturn").fadeIn();
   $("#accordion").fadeIn();
   clearInterval(OchessClock);
@@ -574,15 +574,15 @@ $("#Oendturn").click(function() {
   console.log("enemy turn " + OCount);
   $("#Oturncounter").text(OCount);
   if (OCount > 1) {
-    $(".pregame").fadeOut();
+    $(".pregame").hide();
   }
 });
 
 // OVERWATCH button ------------------------------------------------
 
 $("#overwatch").click(function() {
-  $("#yourturn").fadeOut();
-  $("#accordion").fadeOut();
+  $("#yourturn").hide();
+  $("#accordion").hide();
   $("#opponentTurn").fadeIn();
   clearInterval(chessClock);
   console.log("stopping");
@@ -592,28 +592,28 @@ $("#overwatch").click(function() {
 $("#goBack").click(function() {
   $("#yourturn").fadeIn();
   $("#accordion").fadeIn();
-  $("#opponentTurn").fadeOut();
+  $("#opponentTurn").hide();
   clearInterval(OchessClock);
   console.log("stopping");
-  $("#goBack").fadeOut();
+  $("#goBack").hide();
 });
 
 $("#Ooverwatch").click(function() {
   $("#yourturn").fadeIn();
-  $("#opponentTurn").fadeOut();
-  $("#Oaccordion").fadeOut();
+  $("#opponentTurn").hide();
+  $("#Oaccordion").hide();
   clearInterval(OchessClock);
   console.log("Ostopping");
   $("#OgoBack").fadeIn();
 });
 
 $("#OgoBack").click(function() {
-  $("#yourturn").fadeOut();
+  $("#yourturn").hide();
   $("#opponentTurn").fadeIn();
   $("#Oaccordion").fadeIn();
   clearInterval(chessClock);
   console.log("stopping");
-  $("#OgoBack").fadeOut();
+  $("#OgoBack").hide();
 });
 
 //  OPPONENT counters ---------------------------------
@@ -997,13 +997,13 @@ function editLists() {
 }
 
 $("#returnToLandingButton").click(function() {
-  $("#accordion").fadeOut();
+  $("#accordion").hide();
   $("#landing").fadeIn();
   $("#returnToLandingButton").hide();
 });
 
 $("#OreturnToLandingButton").click(function() {
-  $("#Oaccordion").fadeOut();
+  $("#Oaccordion").hide();
   $("#landing").fadeIn();
   $("#OreturnToLandingButton").hide();
 });
@@ -1034,15 +1034,15 @@ function endGame() {
     clearInterval(chessClock);
     clearInterval(OchessClock);
     $("#endGameDiv").fadeIn();
-    $("#goBack").fadeOut();
-    $("#OgoBack").fadeOut();
-    $("#opponentTurn").fadeOut();
-    $("#yourturn").fadeOut();
-    $("#accordion").fadeOut();
-    $("#Oaccordion").fadeOut();
-    $("#settings").fadeOut();
-    $("#landing").fadeOut();
-    $("#aboutThisApp").fadeOut();
+    $("#goBack").hide();
+    $("#OgoBack").hide();
+    $("#opponentTurn").hide();
+    $("#yourturn").hide();
+    $("#accordion").hide();
+    $("#Oaccordion").hide();
+    $("#settings").hide();
+    $("#landing").hide();
+    $("#aboutThisApp").hide();
     if ($("#player1VP").text() > $("#player2VP").text()) {
       $("#winningPlayer").text("You Win!");
     } else if ($("#player1VP").text() == $("#player2VP").text()) {
@@ -1055,7 +1055,7 @@ function endGame() {
 
 // buttons for resetting game state
 $("#keepCurrent").click(function() {
-  $("#endGameDiv").fadeOut();
+  $("#endGameDiv").hide();
   $("#landing").fadeIn();
 
   var count = 1;
@@ -1090,7 +1090,7 @@ $("#keepCurrent").click(function() {
     span.innerHTML = Ominutes + ":" + Oseconds;
   }
 
-  $("#settings").fadeOut();
+  $("#settings").hide();
   console.log(time);
   console.log(Otime);
 

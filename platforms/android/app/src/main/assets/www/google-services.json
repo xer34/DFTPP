@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "957130983331",
+    "firebase_url": "https://battletimer-24bb3.firebaseio.com",
+    "project_id": "battletimer-24bb3",
+    "storage_bucket": "battletimer-24bb3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957130983331:android:d75cd3f3b96f0e7f",
+        "android_client_info": {
+          "package_name": "com.battletimer.dftpp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "957130983331-3v7ehhjsntfcajnj7e4ldh10nkuq1g0b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCAGWCrOIXypQQB8H7l1rSPT_kxDTvtOs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

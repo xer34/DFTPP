@@ -1,17 +1,15 @@
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBBocEFG1hxeBFkDwZP587L1APyZino7Ec",
-    authDomain: "battletimer-24bb3.firebaseapp.com",
-    databaseURL: "https://battletimer-24bb3.firebaseio.com",
-    projectId: "battletimer-24bb3",
-    storageBucket: "battletimer-24bb3.appspot.com",
-    messagingSenderId: "957130983331"
-  };
-  firebase.initializeApp(config);
-  
-  const database = firebase.database()
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyBBocEFG1hxeBFkDwZP587L1APyZino7Ec",
+  authDomain: "battletimer-24bb3.firebaseapp.com",
+  databaseURL: "https://battletimer-24bb3.firebaseio.com",
+  projectId: "battletimer-24bb3",
+  storageBucket: "battletimer-24bb3.appspot.com",
+  messagingSenderId: "957130983331"
+};
+firebase.initializeApp(config);
 
-
+const database = firebase.database();
 
 $("#splash").show();
 
@@ -134,7 +132,7 @@ $("#startTimer").click(function() {
   chessClock = setInterval(function() {
     time--;
     console.log(time);
-    
+
     if (time >= 0) {
       var minutes = ~~(time / 60);
       var seconds = time - minutes * 60;
@@ -242,6 +240,12 @@ function newElement() {
     document.getElementById("myUL").appendChild(li);
   }
   document.getElementById("preGameInput").value = "";
+
+  var listItem = {
+    pregame: itemValue
+  };
+
+  database.ref().push(listItem);
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -1129,5 +1133,3 @@ $("#resetGameButton").click(function() {
     location.reload();
   }
 });
-
-

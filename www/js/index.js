@@ -121,12 +121,13 @@ function setGameTime() {
   $("#settings").hide();
   console.log(time);
   console.log(Otime);
-  database.ref().push(time);
-  database.ref().push(Otime);
+  database.ref().child("/players/player1/timer").set(time);
+  database.ref().child("/players/player1/OppTimer").set(OTime);
 }
 
 $("#startTimer").click(function() {
-  database.ref().push(time);
+  database.ref().child("/players/player1/timer").set(time);
+  
   clearInterval(chessClock);
   timerOn = true;
   chessClock = setInterval(function() {
@@ -152,8 +153,8 @@ $("#startTimer").click(function() {
 $("#pause").click(function() {
   console.log("Stopping");
   clearInterval(chessClock);
-  database.ref().push(time);
-});
+  database.ref().child("/players/player1/timer").set(time);
+  });
 
 // OPPONENT TIMER ----------------------------------------------------------------------
 var OchessClock;
@@ -161,6 +162,7 @@ var OtimerOn = false;
 var Otime = 4500;
 
 $("#OstartTimer").click(function() {
+  database.ref().child("/players/player2/Timer").set(Otime);
   clearInterval(OchessClock);
   OtimerOn = true;
   OchessClock = setInterval(function() {
@@ -185,6 +187,7 @@ $("#OstartTimer").click(function() {
 $("#Opause").click(function() {
   console.log("Opponent Stopping");
   clearInterval(OchessClock);
+  database.ref().child("/players/player2/Timer").set(Otime);
 });
 
 // preGameInput----------------------------------------------------------------------
@@ -241,11 +244,8 @@ function newElement() {
   }
   document.getElementById("preGameInput").value = "";
 
-  var listItem = {
-    pregame: itemValue
-  };
 
-  database.ref().push(listItem);
+  database.ref().child("/players/player1/pregame").push(inputValue);
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -285,6 +285,9 @@ function moveElement() {
     document.getElementById("moveUL").appendChild(li);
   }
   document.getElementById("movementInput").value = "";
+
+
+  database.ref().child("/players/player1/movement").push(inputValue);
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -328,8 +331,11 @@ function newPsychicElement() {
     alert("You must write something!");
   } else {
     document.getElementById("psyUL").appendChild(li);
-  }
+ }
   document.getElementById("psychicInput").value = "";
+
+
+  database.ref().child("/players/player1/psychic").push(inputValue);
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -375,6 +381,10 @@ function shootElement() {
     document.getElementById("shootUL").appendChild(li);
   }
   document.getElementById("shootInput").value = "";
+  
+
+
+  database.ref().child("/players/player1/shoot").push(inputValue);
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -421,6 +431,8 @@ function chargeElement() {
   }
   document.getElementById("chargeInput").value = "";
 
+  database.ref().child("/players/player1/charge").push(inputValue);
+
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
   span.className = "close";
@@ -466,6 +478,8 @@ function fightElement() {
   }
   document.getElementById("fightInput").value = "";
 
+ database.ref().child("/players/player1/fight").push(inputValue);
+
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
   span.className = "close";
@@ -510,6 +524,10 @@ function moraleElement() {
     document.getElementById("moraleUL").appendChild(li);
   }
   document.getElementById("moraleInput").value = "";
+
+
+ database.ref().child("/players/player1/morale").push(inputValue);
+
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -585,6 +603,7 @@ $("#endturn").click(function() {
   if (count > 1) {
     $(".pregame").hide();
   }
+  database.ref().child("/players/player1/Timer").set(time);
 });
 
 $("#Oendturn").click(function() {
@@ -600,6 +619,7 @@ $("#Oendturn").click(function() {
   if (OCount > 1) {
     $(".pregame").hide();
   }
+  database.ref().child("/players/player2/Timer").set(Otime);
 });
 
 // OVERWATCH button ------------------------------------------------
@@ -708,6 +728,8 @@ function OnewElement() {
   }
   document.getElementById("OpreGameInput").value = "";
 
+  database.ref().child("/players/player2/pregame").push(inputValue);
+
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
   span.className = "close";
@@ -753,6 +775,9 @@ function OmoveElement() {
   }
   document.getElementById("OmovementInput").value = "";
 
+  database.ref().child("/players/player2/movement").push(inputValue);
+
+
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
   span.className = "close";
@@ -795,6 +820,9 @@ function OnewPsychicElement() {
     document.getElementById("OpsyUL").appendChild(li);
   }
   document.getElementById("OpsychicInput").value = "";
+
+  database.ref().child("/players/player2/psychic").push(inputValue);
+
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -839,6 +867,9 @@ function OshootElement() {
   }
   document.getElementById("OshootInput").value = "";
 
+  database.ref().child("/players/player2/shoot").push(inputValue);
+
+
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
   span.className = "close";
@@ -881,6 +912,9 @@ function OchargeElement() {
     document.getElementById("OchargeUL").appendChild(li);
   }
   document.getElementById("OchargeInput").value = "";
+
+  database.ref().child("/players/player2/charge").push(inputValue);
+
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -925,6 +959,9 @@ function OfightElement() {
   }
   document.getElementById("OfightInput").value = "";
 
+  database.ref().child("/players/player2/fight").push(inputValue);
+
+
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
   span.className = "close";
@@ -967,6 +1004,9 @@ function OmoraleElement() {
     document.getElementById("OmoraleUL").appendChild(li);
   }
   document.getElementById("OmoraleInput").value = "";
+
+  database.ref().child("/players/player2/morale").push(inputValue);
+
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");

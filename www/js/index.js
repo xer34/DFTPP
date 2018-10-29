@@ -1,3 +1,5 @@
+var player = ~~(Math.random() * 100000);
+
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyBBocEFG1hxeBFkDwZP587L1APyZino7Ec",
@@ -8,8 +10,19 @@ var config = {
   messagingSenderId: "957130983331"
 };
 firebase.initializeApp(config);
-
 const database = firebase.database();
+
+
+//----------------------------
+function disableDatabase() {
+alert("Analytics Disabled")
+var config = {}
+firebase.initializeApp(config);
+
+}
+
+//----------------------------
+
 
 $("#splash").show();
 
@@ -55,6 +68,13 @@ function OhideLanding() {
 
 function showSettings() {
   $("#settings").fadeIn();
+  $("body").css("background", "#222222");
+  $("#opponentTurn").hide();
+  $("#yourturn").hide();
+  $("#accordion").hide();
+  $("#Oaccordion").hide();
+  $("#landing").hide();
+
 }
 
 function aboutThisApp() {
@@ -71,6 +91,18 @@ function aboutThisApp() {
 function goToLanding() {
   $("#landing").fadeIn();
   $("#aboutThisApp").hide();
+  $("#opponentTurn").hide();
+  $("#yourturn").hide();
+  $("#accordion").hide();
+  $("#Oaccordion").hide();
+  $("#settings").hide();
+  $("body").css({
+    "background-image": 'url("./img/pic.jpg")',
+    "background-repeat": "no-repeat",
+    "background-color": "black",
+    "background-size": "100vw 100vh"
+  });
+
 }
 
 // ACCORDIAN ----------------------------------------------------------------------
@@ -121,13 +153,22 @@ function setGameTime() {
   $("#settings").hide();
   console.log(time);
   console.log(Otime);
-  database.ref().child("/players/player1/timer").set(time);
-  database.ref().child("/players/player1/OppTimer").set(OTime);
+  database
+    .ref()
+    .child("/players/" + player + "/Player1/Timer")
+    .set(time);
+  database
+    .ref()
+    .child("/players/" + player + "/Player2/Timer")
+    .set(Otime);
 }
 
 $("#startTimer").click(function() {
-  database.ref().child("/players/player1/timer").set(time);
-  
+  database
+    .ref()
+    .child("/players/" + player + "/Player1/Timer")
+    .set(time);
+
   clearInterval(chessClock);
   timerOn = true;
   chessClock = setInterval(function() {
@@ -153,8 +194,11 @@ $("#startTimer").click(function() {
 $("#pause").click(function() {
   console.log("Stopping");
   clearInterval(chessClock);
-  database.ref().child("/players/player1/timer").set(time);
-  });
+  database
+    .ref()
+    .child("/players/" + player + "/Player1/Timer")
+    .set(time);
+});
 
 // OPPONENT TIMER ----------------------------------------------------------------------
 var OchessClock;
@@ -162,7 +206,10 @@ var OtimerOn = false;
 var Otime = 4500;
 
 $("#OstartTimer").click(function() {
-  database.ref().child("/players/player2/Timer").set(Otime);
+  database
+    .ref()
+    .child("/players/" + player + "/Player2/Timer")
+    .set(Otime);
   clearInterval(OchessClock);
   OtimerOn = true;
   OchessClock = setInterval(function() {
@@ -187,7 +234,10 @@ $("#OstartTimer").click(function() {
 $("#Opause").click(function() {
   console.log("Opponent Stopping");
   clearInterval(OchessClock);
-  database.ref().child("/players/player2/Timer").set(Otime);
+  database
+    .ref()
+    .child("/players/" + player + "/Player2/Timer")
+    .set(Otime);
 });
 
 // preGameInput----------------------------------------------------------------------
@@ -244,8 +294,10 @@ function newElement() {
   }
   document.getElementById("preGameInput").value = "";
 
-
-  database.ref().child("/players/player1/pregame").push(inputValue);
+  database
+    .ref()
+    .child("/players/" + player + "/Player1/pregame")
+    .push(inputValue);
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -286,8 +338,10 @@ function moveElement() {
   }
   document.getElementById("movementInput").value = "";
 
-
-  database.ref().child("/players/player1/movement").push(inputValue);
+  database
+    .ref()
+    .child("/players/" + player + "/Player1/movement")
+    .push(inputValue);
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -331,11 +385,13 @@ function newPsychicElement() {
     alert("You must write something!");
   } else {
     document.getElementById("psyUL").appendChild(li);
- }
+  }
   document.getElementById("psychicInput").value = "";
 
-
-  database.ref().child("/players/player1/psychic").push(inputValue);
+  database
+    .ref()
+    .child("/players/" + player + "/Player1/psychic")
+    .push(inputValue);
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -381,10 +437,11 @@ function shootElement() {
     document.getElementById("shootUL").appendChild(li);
   }
   document.getElementById("shootInput").value = "";
-  
 
-
-  database.ref().child("/players/player1/shoot").push(inputValue);
+  database
+    .ref()
+    .child("/players/" + player + "/Player1/shoot")
+    .push(inputValue);
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -431,7 +488,10 @@ function chargeElement() {
   }
   document.getElementById("chargeInput").value = "";
 
-  database.ref().child("/players/player1/charge").push(inputValue);
+  database
+    .ref()
+    .child("/players/" + player + "/Player1/charge")
+    .push(inputValue);
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -478,7 +538,10 @@ function fightElement() {
   }
   document.getElementById("fightInput").value = "";
 
- database.ref().child("/players/player1/fight").push(inputValue);
+  database
+    .ref()
+    .child("/players/" + player + "/Player1/fight")
+    .push(inputValue);
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -525,9 +588,10 @@ function moraleElement() {
   }
   document.getElementById("moraleInput").value = "";
 
-
- database.ref().child("/players/player1/morale").push(inputValue);
-
+  database
+    .ref()
+    .child("/players/" + player + "/Player1/morale")
+    .push(inputValue);
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -603,7 +667,14 @@ $("#endturn").click(function() {
   if (count > 1) {
     $(".pregame").hide();
   }
-  database.ref().child("/players/player1/Timer").set(time);
+  database
+    .ref()
+    .child("/players/" + player + "/Player1/Timer")
+    .set(time);
+  database
+    .ref()
+    .child("/players/" + player + "/Player1/TurnTime")
+    .push("Turn: " + (count - 1) + " " + "Time: " + ((4500 - time) / 60).toFixed(2));
 });
 
 $("#Oendturn").click(function() {
@@ -619,7 +690,14 @@ $("#Oendturn").click(function() {
   if (OCount > 1) {
     $(".pregame").hide();
   }
-  database.ref().child("/players/player2/Timer").set(Otime);
+  database
+    .ref()
+    .child("/players/" + player + "/Player2/Timer")
+    .set(Otime);
+  database
+    .ref()
+    .child("/players/" + player + "/Player2/TurnTime")
+    .push("Turn: " + (OCount - 1) + " " + "Time: " + ((4500 - Otime) / 60).toFixed(2));
 });
 
 // OVERWATCH button ------------------------------------------------
@@ -728,7 +806,10 @@ function OnewElement() {
   }
   document.getElementById("OpreGameInput").value = "";
 
-  database.ref().child("/players/player2/pregame").push(inputValue);
+  database
+    .ref()
+    .child("/players/" + player + "/Player2/Pregame")
+    .push(inputValue);
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -775,8 +856,10 @@ function OmoveElement() {
   }
   document.getElementById("OmovementInput").value = "";
 
-  database.ref().child("/players/player2/movement").push(inputValue);
-
+  database
+    .ref()
+    .child("/players/" + player + "/Player2/Movement")
+    .push(inputValue);
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -821,8 +904,10 @@ function OnewPsychicElement() {
   }
   document.getElementById("OpsychicInput").value = "";
 
-  database.ref().child("/players/player2/psychic").push(inputValue);
-
+  database
+    .ref()
+    .child("/players/" + player + "/Player2/Psychic")
+    .push(inputValue);
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -867,8 +952,10 @@ function OshootElement() {
   }
   document.getElementById("OshootInput").value = "";
 
-  database.ref().child("/players/player2/shoot").push(inputValue);
-
+  database
+    .ref()
+    .child("/players/" + player + "/Player2/Shoot")
+    .push(inputValue);
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -913,8 +1000,10 @@ function OchargeElement() {
   }
   document.getElementById("OchargeInput").value = "";
 
-  database.ref().child("/players/player2/charge").push(inputValue);
-
+  database
+    .ref()
+    .child("/players/" + player + "/Player2/Charge")
+    .push(inputValue);
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -959,8 +1048,10 @@ function OfightElement() {
   }
   document.getElementById("OfightInput").value = "";
 
-  database.ref().child("/players/player2/fight").push(inputValue);
-
+  database
+    .ref()
+    .child("/players/" + player + "/Player2/Fight")
+    .push(inputValue);
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -1005,8 +1096,10 @@ function OmoraleElement() {
   }
   document.getElementById("OmoraleInput").value = "";
 
-  database.ref().child("/players/player2/morale").push(inputValue);
-
+  database
+    .ref()
+    .child("/players/Player2" + player + "/Player2/Morale")
+    .push(inputValue);
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -1064,12 +1157,24 @@ $("#returnToLandingButton").click(function() {
   $("#accordion").hide();
   $("#landing").fadeIn();
   $("#returnToLandingButton").hide();
+  $("body").css({
+    "background-image": 'url("./img/pic.jpg")',
+    "background-repeat": "no-repeat",
+    "background-color": "black",
+    "background-size": "100vw 100vh"
+  });
 });
 
 $("#OreturnToLandingButton").click(function() {
   $("#Oaccordion").hide();
   $("#landing").fadeIn();
   $("#OreturnToLandingButton").hide();
+  $("body").css({
+    "background-image": 'url("./img/pic.jpg")',
+    "background-repeat": "no-repeat",
+    "background-color": "black",
+    "background-size": "100vw 100vh"
+  });
 });
 
 function OeditLists() {
@@ -1173,3 +1278,4 @@ $("#resetGameButton").click(function() {
     location.reload();
   }
 });
+

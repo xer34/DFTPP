@@ -28,6 +28,8 @@
     <button id='OgoBackButton' type="button" class="btn btn-secondary">Go Back</button>
   </div>
 
+  <!-- return to landing buttons on the pre game edit list page -->
+
   <div id='returnToLanding'>
     <button id='returnToLandingButton' type="button" class="btn btn-secondary">Go Back</button>
   </div>
@@ -292,13 +294,20 @@
 
   <div class="container-fluid" id='settings'>
 
-    <form>
-      <p>You can edit the game length time here. Please enter <strong>total</strong> game length in minutes.</p>
-      <button type="button" onclick='setGameTime()' class="btn btn-dark">Set Time</button>
-    </form><br>
+
+    <p>You can edit the game length time here. Please enter <strong>total</strong> game length in minutes.</p>
+    <button type="button" onclick='setGameTime()' class="btn btn-dark">Set Time</button>
+
+    <br><br>
     <p>Edit yours or your opponents checklists before the game:</p>
     <button id='editLists' onclick='editLists()' type="button" class="btn btn-danger">Edit Your List</button>
     <button id='OeditLists' onclick='OeditLists()' type="button" class="btn btn-danger">Edit Opponent List</button>
+    <br><br>
+    <!-- <p>Anonymous data is currently kept on a database. This is for meta analysis and this apps development and is not used for any other purpose. You can disable it here.</p>
+    <button type="button" onclick='disableDatabase()' class="btn btn-dark">Disable Analytics</button> -->
+    <br><br>
+    <button id='returnbutton' onclick="goToLanding()" type="button" class="btn btn-secondary">Return</button>
+
   </div>
 
   <!-- about this app ------------------------------------------------------------- -->
@@ -317,14 +326,14 @@
         <li>Default time is 90 minute player turns. This can be changed in the settings if you input your total game
           length in minutes. For example a 2:30 hour round would be input as a 180 minutes.</li>
         <li>Clock will automatically pause when turn is ended.</li>
-        <li>Clock can be passed back and forth between players using the Overwatch button when the game begins.</li>
+        <li>Clock can be passed back and forth between players using the Overwatch button when the game begins. The
+          current players time will automatically pause when this is pressed.</li>
       </ul>
     </div>
     <button class="accordion"><strong>Turn by Turn Checklist</strong></button>
     <div class="panel">
       <ul>
         <li>Checklists can be edited prior to the game under settings.</li>
-        <li>Pregame, Movement, Shooting, Etc.</li>
         <li>Pregame will disappear after the first battle round.</li>
         <li>Checklists do not have a maximum number of items, however only 9 are visible at a time.</li>
       </ul>
@@ -336,15 +345,25 @@
         <li>On soft reset of game state, these counters will reset to zero.</li>
       </ul>
     </div>
-    <button class="accordion"><strong>Easy to Read</strong></button>
+    <button class="accordion"><strong>Easy to Read. Easyish to use.</strong></button>
     <div class="panel">
       <ul>
         <li><b style="background-color: initial;"></b>Uses easy to read fonts, colors and styles to make things easy on
-          the eyes, also uses black where possible to save on battery life.&nbsp;</li>
+          the eyes, also uses black where possible to save on battery life.</li>
       </ul>
     </div>
-    <strong><br>
-    </strong>
+    <button class="accordion"><strong>Data use and Analytics</strong></button>
+    <div class="panel">
+      <ul>
+        <li><b style="background-color: initial;"></b>Anonymous data is collected in regards to timers, list items and amount of time spent in phases.</li>
+        <li>This data is used for meta analysis and for me to get a better handle on how to structure the list database.</li>  
+        <li>In the future lists will be uploadable and downloadable. Currently I'm still working on a way of doing this and am still figuring out how to implement this feature.</li>
+        <!-- <li>If you do not not want this information collected you can disable it in the
+          settings.</li> -->
+        
+      </ul>
+    </div>
+    <br>
 
     <br>
     <br>

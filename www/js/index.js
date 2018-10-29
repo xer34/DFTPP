@@ -48,7 +48,7 @@ function hideLanding() {
   $("#landing").hide();
   $("#yourturn").fadeIn();
   $("#accordion").fadeIn();
-  $("body").css("background", "#222222");
+
   $("#endturn").fadeIn();
   $("#overwatch").fadeIn();
   $("#endGame").fadeIn();
@@ -59,7 +59,7 @@ function OhideLanding() {
   $("#landing").hide();
   $("#opponentTurn").fadeIn();
   $("#Oaccordion").fadeIn();
-  $("body").css("background", "#222222");
+
   $("#Oendturn").fadeIn();
   $("#Ooverwatch").fadeIn();
   $("#OendGame").fadeIn();
@@ -68,7 +68,7 @@ function OhideLanding() {
 
 function showSettings() {
   $("#settings").fadeIn();
-  $("body").css("background", "#222222");
+
   $("#opponentTurn").hide();
   $("#yourturn").hide();
   $("#accordion").hide();
@@ -96,12 +96,12 @@ function goToLanding() {
   $("#accordion").hide();
   $("#Oaccordion").hide();
   $("#settings").hide();
-  $("body").css({
-    "background-image": 'url("./img/pic.jpg")',
-    "background-repeat": "no-repeat",
-    "background-color": "black",
-    "background-size": "100vw 100vh"
-  });
+  // $("body").css({
+  //   "background-image": 'url("./img/pic.jpg")',
+  //   "background-repeat": "no-repeat",
+  //   "background-color": "black",
+  //   "background-size": "100vw 100vh"
+  // });
 
 }
 
@@ -1157,24 +1157,24 @@ $("#returnToLandingButton").click(function() {
   $("#accordion").hide();
   $("#landing").fadeIn();
   $("#returnToLandingButton").hide();
-  $("body").css({
-    "background-image": 'url("./img/pic.jpg")',
-    "background-repeat": "no-repeat",
-    "background-color": "black",
-    "background-size": "100vw 100vh"
-  });
+  // $("body").css({
+  //   "background-image": 'url("./img/pic.jpg")',
+  //   "background-repeat": "no-repeat",
+  //   "background-color": "black",
+  //   "background-size": "100vw 100vh"
+  // });
 });
 
 $("#OreturnToLandingButton").click(function() {
   $("#Oaccordion").hide();
   $("#landing").fadeIn();
   $("#OreturnToLandingButton").hide();
-  $("body").css({
-    "background-image": 'url("./img/pic.jpg")',
-    "background-repeat": "no-repeat",
-    "background-color": "black",
-    "background-size": "100vw 100vh"
-  });
+  // $("body").css({
+  //   "background-image": 'url("./img/pic.jpg")',
+  //   "background-repeat": "no-repeat",
+  //   "background-color": "black",
+  //   "background-size": "100vw 100vh"
+  // });
 });
 
 function OeditLists() {
@@ -1263,12 +1263,12 @@ $("#keepCurrent").click(function() {
   console.log(time);
   console.log(Otime);
 
-  $("body").css({
-    "background-image": 'url("./img/pic.jpg")',
-    "background-repeat": "no-repeat",
-    "background-color": "black",
-    "background-size": "100vw 100vh"
-  });
+  // $("body").css({
+  //   "background-image": 'url("./img/pic.jpg")',
+  //   "background-repeat": "no-repeat",
+  //   "background-color": "black",
+  //   "background-size": "100vw 100vh"
+  // });
 });
 
 $("#resetGameButton").click(function() {

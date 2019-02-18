@@ -585,3 +585,9 @@ input {
     box-shadow: 0 0 0 transparent;
   }
 }
+.g-signin2 {
+  z-index: 1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}

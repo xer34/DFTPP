@@ -27,7 +27,9 @@
     </platform>
     <universal-links>
     <host name="battletimer.page.link" scheme="https" />
-
+  <host name="battletimer-24bb3.firebaseapp.com" scheme="https">
+        <path url="/__/auth/callback"/>
+    </host>
 </universal-links>
 <preference name="AndroidLaunchMode" value="singleTask" />
     <widget xmlns="http://www.w3.org/ns/widgets">

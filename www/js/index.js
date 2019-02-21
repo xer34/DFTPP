@@ -14,7 +14,8 @@ const database = firebase.database();
 
 var provider = new firebase.auth.GoogleAuthProvider();
 //----------------------------
-firebase
+
+  firebase
   .auth()
   .signInWithRedirect(provider)
   .then(function() {
@@ -26,6 +27,7 @@ firebase
     var token = result.credential.accessToken;
     // The signed-in user info.
     var user = result.user;
+    console.log(user)
     database
     .ref()
     .child("/players/" + user + "/Player1/Timer")
@@ -37,6 +39,7 @@ firebase
     var errorCode = error.code;
     var errorMessage = error.message;
   });
+
 
 //----------------------------
 
@@ -72,12 +75,12 @@ function hideLanding() {
   $("#settings").hide();
 }
 
-function loginButton() {
-  $("#landing").hide();
+// function loginButton() {
+//   $("#landing").hide();
 
-  $("#settings").hide();
-  $(".login").fadeIn();
-}
+//   $("#settings").hide();
+//   $(".login").fadeIn();
+// }
 
 function OhideLanding() {
   $("#landing").hide();

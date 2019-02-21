@@ -12,9 +12,10 @@ var config = {
 firebase.initializeApp(config);
 const database = firebase.database();
 
-var provider = new firebase.auth.GoogleAuthProvider();
-//----------------------------
 
+//----------------------------
+function loginButton() {
+var provider = new firebase.auth.GoogleAuthProvider();
   firebase
   .auth()
   .signInWithRedirect(provider)
@@ -39,6 +40,7 @@ var provider = new firebase.auth.GoogleAuthProvider();
     var errorCode = error.code;
     var errorMessage = error.message;
   });
+}
 
 
 //----------------------------
@@ -1311,3 +1313,7 @@ $("#resetGameButton").click(function() {
     location.reload();
   }
 });
+
+
+//---------------------------------------
+

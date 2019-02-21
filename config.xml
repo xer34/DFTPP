@@ -25,6 +25,11 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <universal-links>
+    <host name="battletimer.page.link" scheme="https" />
+
+</universal-links>
+<preference name="AndroidLaunchMode" value="singleTask" />
     <widget xmlns="http://www.w3.org/ns/widgets">
         <style id="night-mode-pro-style" type="text/css" />
         <link id="night-mode-pro-link" rel="stylesheet" type="text/css" />
@@ -72,8 +77,3 @@
     <plugin name="cordova-plugin-browsertab" spec="~0.2.0" />
     <plugin name="cordova-plugin-inappbrowser" spec="~3.0.0" />
 </widget>
-<universal-links>
-    <host name="battletimer.page.link" scheme="https" />
-
-</universal-links>
-<preference name="AndroidLaunchMode" value="singleTask" />

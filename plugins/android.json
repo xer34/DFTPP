@@ -18,6 +18,15 @@
     },
     "com.verso.cordova.clipboard": {
       "PACKAGE_NAME": "com.battletimer.dftpp"
+    },
+    "cordova-universal-links-plugin": {
+      "PACKAGE_NAME": "com.battletimer.dftpp"
+    },
+    "cordova-plugin-browsertab": {
+      "PACKAGE_NAME": "com.battletimer.dftpp"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.battletimer.dftpp"
     }
   },
   "dependent_plugins": {}

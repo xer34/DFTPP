@@ -68,6 +68,12 @@
         </platform>
     </widget>
     <plugin name="cordova-plugin-whitelist" spec="~1.3.3" />
-    <!-- <plugin name="cordova-plugin-firebase" spec="^2.0.0" /> -->
-
+    <plugin name="cordova-universal-links-plugin" spec="~1.2.1" />
+    <plugin name="cordova-plugin-browsertab" spec="~0.2.0" />
+    <plugin name="cordova-plugin-inappbrowser" spec="~3.0.0" />
 </widget>
+<universal-links>
+    <host name="battletimer.page.link" scheme="https" />
+
+</universal-links>
+<preference name="AndroidLaunchMode" value="singleTask" />

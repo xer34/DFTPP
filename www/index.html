@@ -6,16 +6,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="./css/bootstrap.css">
+  <!-- <link rel="stylesheet" href="./css/bootstrap.css"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
   <link rel='stylesheet' href="./css/index.css">
-  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
-  <meta name="google-signin-scope" content="profile email">
-  <meta name="google-signin-client_id" content="957130983331-ujcfejkd5emjk8kl5i4ced7f5q7kmuj2.apps.googleusercontent.com">
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<!-- Firebase App is always required and must be first -->
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+
+<!-- Add additional services that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-functions.js"></script>
+
+<!-- Comment out (or don't include) services that you don't want to use -->
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-storage.js"></script>
+
 </head>
 <body>
-  <div class="g-signin2" data-onsuccess="onSignIn">Button</div>
+
+    <div id="firebaseui-auth-container" class="login"></div>
+
+
   <!--overwatch return buttons / hide on load  ------------------------------------------------------------- -->
+
   <div id='goBack'>
     <button id='goBackButton' type="button" class="btn btn-secondary">Go Back</button>
   </div>
@@ -51,6 +67,7 @@
       First Turn</button>
     <button id='OstartButton' onclick="OhideLanding()" type="button" class="btn btn-secondary">Enemy First Turn</button>
     <button id='showSettingsButton' onclick="showSettings()" type="button" class="btn btn-secondary">Settings</button>
+    <!-- <button id='loginButton' onclick="loginButton()" type="button" class="btn btn-secondary">Login</button> -->
     <button id='support' onclick="aboutThisApp()" type="button" class="btn btn-secondary">About this App</button>
   </div>
   </div>

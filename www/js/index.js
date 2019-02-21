@@ -12,19 +12,35 @@ var config = {
 firebase.initializeApp(config);
 const database = firebase.database();
 
+var provider = new firebase.auth.GoogleAuthProvider();
+//----------------------------
+firebase
+  .auth()
+  .signInWithRedirect(provider)
+  .then(function() {
+    return firebase.auth().getRedirectResult();
+  })
+  .then(function(result) {
+    // This gives you a Google Access Token.
+    // You can use it to access the Google API.
+    var token = result.credential.accessToken;
+    // The signed-in user info.
+    var user = result.user;
+    database
+    .ref()
+    .child("/players/" + user + "/Player1/Timer")
+    .set(time);
+    // ...
+  })
+  .catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+  });
 
 //----------------------------
-function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-}
 
-//----------------------------
-
-$(".g-signin2").show()
+$(".login").hide();
 $("#splash").show();
 
 $("#endGameDiv").hide();
@@ -56,6 +72,13 @@ function hideLanding() {
   $("#settings").hide();
 }
 
+function loginButton() {
+  $("#landing").hide();
+
+  $("#settings").hide();
+  $(".login").fadeIn();
+}
+
 function OhideLanding() {
   $("#landing").hide();
   $("#opponentTurn").fadeIn();
@@ -75,7 +98,6 @@ function showSettings() {
   $("#accordion").hide();
   $("#Oaccordion").hide();
   $("#landing").hide();
-
 }
 
 function aboutThisApp() {
@@ -103,7 +125,6 @@ function goToLanding() {
   //   "background-color": "black",
   //   "background-size": "100vw 100vh"
   // });
-
 }
 
 // ACCORDIAN ----------------------------------------------------------------------
@@ -675,7 +696,9 @@ $("#endturn").click(function() {
   database
     .ref()
     .child("/players/" + player + "/Player1/TurnTime")
-    .push("Turn: " + (count - 1) + " " + "Time: " + ((4500 - time) / 60).toFixed(2));
+    .push(
+      "Turn: " + (count - 1) + " " + "Time: " + ((4500 - time) / 60).toFixed(2)
+    );
 });
 
 $("#Oendturn").click(function() {
@@ -698,7 +721,13 @@ $("#Oendturn").click(function() {
   database
     .ref()
     .child("/players/" + player + "/Player2/TurnTime")
-    .push("Turn: " + (OCount - 1) + " " + "Time: " + ((4500 - Otime) / 60).toFixed(2));
+    .push(
+      "Turn: " +
+        (OCount - 1) +
+        " " +
+        "Time: " +
+        ((4500 - Otime) / 60).toFixed(2)
+    );
 });
 
 // OVERWATCH button ------------------------------------------------
@@ -1279,4 +1308,3 @@ $("#resetGameButton").click(function() {
     location.reload();
   }
 });
-
